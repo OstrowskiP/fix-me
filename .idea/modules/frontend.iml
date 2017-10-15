@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="frontend" external.linked.project.path="$MODULE_DIR$/../../frontend" external.root.project.path="$MODULE_DIR$/../.." external.system.id="SBT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/../../frontend/target/classes" />
+    <output-test url="file://$MODULE_DIR$/../../frontend/target/test-classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../frontend">
+      <sourceFolder url="file://$MODULE_DIR$/../../frontend/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../frontend/src/main/scala" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../frontend/target/src_managed/main" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../frontend/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../frontend/src/test/scala" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../frontend/target/src_managed/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../frontend/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../frontend/target/resource_managed/main" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../frontend/src/test/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../frontend/target/resource_managed/test" type="java-test-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/../../frontend/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="sharedJS" exported="" />
+    <orderEntry type="library" name="SBT: org.webjars:jquery:2.2.4:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.webjars:atmosphere-javascript:2.3.2:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scala-lang:scala-reflect:2.12.2:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scala-lang:scala-library:2.12.2:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.scala-js:scalajs-test-interface_2.12:0.6.17:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scala-js:scalajs-library_2.12:0.6.17:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scala-js:scalajs-dom_sjs0.6_2.12:0.9.2:jar" level="project" />
+    <orderEntry type="library" name="SBT: io.udash:udash-rpc-shared_sjs0.6_2.12:0.5.0:jar" level="project" />
+    <orderEntry type="library" name="SBT: io.udash:udash-rpc-macros_2.12:0.5.0:jar" level="project" />
+    <orderEntry type="library" name="SBT: io.udash:udash-rpc-frontend_sjs0.6_2.12:0.5.0:jar" level="project" />
+    <orderEntry type="library" name="SBT: io.udash:udash-jquery_sjs0.6_2.12:1.0.1:jar" level="project" />
+    <orderEntry type="library" name="SBT: io.udash:udash-core-shared_sjs0.6_2.12:0.5.0:jar" level="project" />
+    <orderEntry type="library" name="SBT: io.udash:udash-core-macros_2.12:0.5.0:jar" level="project" />
+    <orderEntry type="library" name="SBT: io.udash:udash-core-frontend_sjs0.6_2.12:0.5.0:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.lihaoyi:sourcecode_sjs0.6_2.12:0.1.3:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.lihaoyi:scalatags_sjs0.6_2.12:0.6.5:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.github.japgolly.univeq:univeq_sjs0.6_2.12:1.0.2:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.github.japgolly.scalacss:ext-scalatags_sjs0.6_2.12:0.5.3:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.github.japgolly.scalacss:core_sjs0.6_2.12:0.5.3:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.github.ghik:silencer-lib_2.12:0.5:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.avsystem.commons:commons-shared_sjs0.6_2.12:1.20.3:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.avsystem.commons:commons-shared_2.12:1.20.3:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.avsystem.commons:commons-macros_2.12:1.20.3:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.avsystem.commons:commons-annotations_2.12:1.20.3:jar" level="project" />
+  </component>
+</module>

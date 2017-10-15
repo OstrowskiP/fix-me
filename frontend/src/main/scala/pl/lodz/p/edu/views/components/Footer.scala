@@ -12,20 +12,20 @@ object Footer {
     div(GlobalStyles.body)(
       div(FooterStyles.footerInner)(
         a(FooterStyles.footerLogo, href := ExternalUrls.homepage)(
-          Image("udash_logo.png", "Udash Framework", GlobalStyles.block)
+          Image("fixme_logo.png", "Udash Framework", GlobalStyles.block)
         ),
         div(FooterStyles.footerLinks)(
-          p(FooterStyles.footerMore)("See more"),
+          p(FooterStyles.footerMore)("Nasze dane"),
           ul(
             li(DemoStyles.navItem)(
-              a(href := ExternalUrls.udashDemos, target := "_blank", DemoStyles.underlineLink)("Github demo")
+              p("FixME, ul. Wólczańska 180, 90-530 Łódź")
             ),
             li(DemoStyles.navItem)(
-              a(href := ExternalUrls.stackoverflow, target := "_blank", DemoStyles.underlineLink)("StackOverflow questions")
+              a(href := ExternalUrls.googleMapLocation, target := "_blank", DemoStyles.underlineLink)("Dojazd")
             )
           )
         ),
-        p(FooterStyles.footerCopyrights)("Proudly made by ", a(FooterStyles.footerAvsystemLink, href := ExternalUrls.avsystem, target := "_blank")("AVSystem"))
+        p(FooterStyles.footerCopyrights)("Wykonane przez ", a(FooterStyles.footerAvsystemLink, href := ExternalUrls.authorMail, target := "_blank")("Piotr Ostrowski"))
       )
     )
   ).render

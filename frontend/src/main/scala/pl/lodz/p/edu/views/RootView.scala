@@ -20,7 +20,7 @@ class RootView extends View {
     Header.getTemplate,
     main(GlobalStyles.main)(
       div(GlobalStyles.body)(
-        h1("fix-me"),
+        h1("Witaj na stronie serwisu FixME!"),
         child
       )
     )

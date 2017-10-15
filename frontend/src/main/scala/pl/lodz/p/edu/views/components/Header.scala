@@ -1,5 +1,5 @@
 package pl.lodz.p.edu.views.components
-import pl.lodz.p.edu.IndexState
+import pl.lodz.p.edu.{IndexState, LoginState}
 import pl.lodz.p.edu.config.ExternalUrls
 import pl.lodz.p.edu.styles.GlobalStyles
 import pl.lodz.p.edu.styles.partials.HeaderStyles
@@ -14,29 +14,24 @@ object Header {
     div(GlobalStyles.body, GlobalStyles.clearfix)(
       div(HeaderStyles.headerLeft)(
         a(HeaderStyles.headerLogo, href := IndexState.url)(
-          Image("udash_logo_m.png", "Udash Framework", GlobalStyles.block)
+          Image("fixme_logo_m.png", "Udash Framework", GlobalStyles.block)
         )
       ),
       div(HeaderStyles.headerRight)(
         ul(HeaderStyles.headerSocial)(
           li(HeaderStyles.headerSocialItem)(
-            a(href := ExternalUrls.udashGithub, HeaderStyles.headerSocialLink, target := "_blank")(
+            a(href := ExternalUrls.projectGithub, HeaderStyles.headerSocialLink, target := "_blank")(
               Image("icon_github.png", "Github")
             )
           ),
           li(HeaderStyles.headerSocialItem)(
-            a(href := ExternalUrls.stackoverflow, HeaderStyles.headerSocialLink, target := "_blank")(
-              Image("icon_stackoverflow.png", "StackOverflow")
-            )
-          ),
-          li(HeaderStyles.headerSocialItem)(
-            a(href := ExternalUrls.avsystem, HeaderStyles.headerSocialLinkYellow, target := "_blank")(
-              Image("icon_avsystem.png", "Proudly made by AVSystem"),
+            a(href := LoginState("","").url, HeaderStyles.headerSocialLinkYellow)(
+              Image("icon_login.png", "Login"),
               div(HeaderStyles.tooltip)(
                 div(HeaderStyles.tooltipTop),
                 div(HeaderStyles.tooltipText)(
                   div(HeaderStyles.tooltipTextInner)(
-                    "Proudly made by AVSystem"
+                    "Zaloguj się do portalu!"
                   )
                 )
               )

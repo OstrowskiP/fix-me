@@ -1,0 +1,16 @@
+[info] Fast optimizing /home/postrowski/Desktop/Projects/fix-me/frontend/target/UdashStatic/WebContent/scripts/frontend-impl-fast.js
+[debug] Linker: Compute reachability: 379650 us
+[debug] Linker: Assemble LinkedClasses: 844903 us
+[debug] Basic Linking: 1242278 us
+[debug] Inc. optimizer: Batch mode: true
+[debug] Inc. optimizer: Incremental part: 409074 us
+[debug] Inc. optimizer: Optimizing 11054 methods.
+[debug] Inc. optimizer: Optimizer part: 4780061 us
+[debug] Inc. optimizer: 5210004 us
+[debug] Refiner: Compute reachability: 136061 us
+[debug] Refiner: Assemble LinkedClasses: 15106 us
+[debug] Refiner: 152890 us
+[debug] Emitter: Class tree cache stats: reused: 1116 -- invalidated: 1132
+[debug] Emitter: Method tree cache stats: resued: 0 -- invalidated: 5367
+[debug] Emitter (write output): 1050109 us
+[debug] Global IR cache stats: reused: 0 -- invalidated: 80 -- trees read: 1311

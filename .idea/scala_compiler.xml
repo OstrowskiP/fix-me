@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaCompilerConfiguration">
+    <option name="incrementalityType" value="SBT" />
+    <profile name="SBT 2" modules="fix-me,backend,sharedJVM">
+      <option name="dynamics" value="true" />
+      <option name="implicitConversions" value="true" />
+      <option name="existentials" value="true" />
+      <option name="deprecationWarnings" value="true" />
+      <option name="uncheckedWarnings" value="true" />
+      <option name="featureWarnings" value="true" />
+      <parameters>
+        <parameter value="-Xfuture" />
+        <parameter value="-Xfatal-warnings" />
+        <parameter value="-Xlint:-unused,_" />
+      </parameters>
+    </profile>
+    <profile name="SBT 3" modules="frontend,sharedJS">
+      <option name="dynamics" value="true" />
+      <option name="implicitConversions" value="true" />
+      <option name="existentials" value="true" />
+      <option name="deprecationWarnings" value="true" />
+      <option name="uncheckedWarnings" value="true" />
+      <option name="featureWarnings" value="true" />
+      <parameters>
+        <parameter value="-Xfuture" />
+        <parameter value="-Xfatal-warnings" />
+        <parameter value="-Xlint:-unused,_" />
+      </parameters>
+      <plugins>
+        <plugin path="$USER_HOME$/.ivy2/cache/org.scala-js/scalajs-compiler_2.12.2/jars/scalajs-compiler_2.12.2-0.6.17.jar" />
+      </plugins>
+    </profile>
+  </component>
+</project>

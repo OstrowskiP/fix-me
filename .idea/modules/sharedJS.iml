@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="sharedJS" external.linked.project.path="$MODULE_DIR$/../../shared/.js" external.root.project.path="$MODULE_DIR$/../.." external.system.id="SBT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/../../shared/.js/target/classes" />
+    <output-test url="file://$MODULE_DIR$/../../shared/.js/target/test-classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../shared/.js">
+      <sourceFolder url="file://$MODULE_DIR$/../../shared/.js/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../shared/.js/src/main/scala" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../shared/.js/target/src_managed/main" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../shared/.js/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../shared/.js/src/test/scala" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../shared/.js/target/src_managed/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../shared/.js/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../shared/.js/target/resource_managed/main" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../shared/.js/src/test/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../shared/.js/target/resource_managed/test" type="java-test-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/../../shared/.js/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="fix-me-sources" exported="" />
+    <orderEntry type="library" scope="PROVIDED" name="SBT: org.scala-lang:scala-reflect:2.12.2:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scala-lang:scala-library:2.12.2:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.scala-js:scalajs-test-interface_2.12:0.6.17:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scala-js:scalajs-library_2.12:0.6.17:jar" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="SBT: org.scala-js:scalajs-dom_sjs0.6_2.12:0.9.1:jar" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="SBT: io.udash:udash-rpc-shared_sjs0.6_2.12:0.5.0:jar" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="SBT: io.udash:udash-rpc-macros_2.12:0.5.0:jar" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="SBT: io.udash:udash-core-shared_sjs0.6_2.12:0.5.0:jar" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="SBT: io.udash:udash-core-macros_2.12:0.5.0:jar" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="SBT: com.lihaoyi:sourcecode_sjs0.6_2.12:0.1.3:jar" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="SBT: com.lihaoyi:scalatags_sjs0.6_2.12:0.6.5:jar" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="SBT: com.github.ghik:silencer-lib_2.12:0.5:jar" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="SBT: com.avsystem.commons:commons-shared_sjs0.6_2.12:1.20.3:jar" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="SBT: com.avsystem.commons:commons-shared_2.12:1.20.3:jar" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="SBT: com.avsystem.commons:commons-macros_2.12:1.20.3:jar" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="SBT: com.avsystem.commons:commons-annotations_2.12:1.20.3:jar" level="project" />
+  </component>
+</module>
