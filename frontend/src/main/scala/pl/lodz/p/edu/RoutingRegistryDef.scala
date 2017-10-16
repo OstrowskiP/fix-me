@@ -12,10 +12,7 @@ class RoutingRegistryDef extends RoutingRegistry[RoutingState] {
 
   private val (url2State, state2Url) = Bidirectional[String, RoutingState] {
     case "" => IndexState
-    case "/binding" => BindingDemoState("")
-    case "/login" => LoginState("","")
-    case "/binding" /:/ arg => BindingDemoState(arg)
+    case "/login" => LoginState
     case "/rpc" => RPCDemoState
-    case "/scalacss" => DemoStylesState
   }
 }

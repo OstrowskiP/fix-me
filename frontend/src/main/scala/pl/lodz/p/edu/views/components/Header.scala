@@ -25,7 +25,7 @@ object Header {
             )
           ),
           li(HeaderStyles.headerSocialItem)(
-            a(href := LoginState("","").url, HeaderStyles.headerSocialLinkYellow)(
+            a(href := LoginState.url, HeaderStyles.headerSocialLinkYellow)(
               Image("icon_login.png", "Login"),
               div(HeaderStyles.tooltip)(
                 div(HeaderStyles.tooltipTop),

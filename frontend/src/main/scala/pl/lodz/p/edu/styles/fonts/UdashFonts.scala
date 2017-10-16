@@ -14,7 +14,7 @@ object UdashFonts extends StyleSheet.Inline {
 }
 
 object FontFamily {
-  val Acumin = "'acumin-pro', san-serif"
+  val Acumin = "san-serif"
 }
 
 object FontWeight extends StyleSheet.Inline {

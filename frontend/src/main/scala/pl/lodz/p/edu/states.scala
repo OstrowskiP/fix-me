@@ -12,10 +12,6 @@ case object ErrorState extends RoutingState(RootState)
 
 case object IndexState extends RoutingState(RootState)
 
-case class BindingDemoState(urlArg: String = "") extends RoutingState(RootState)
-
-case class LoginState(login: String = "", password: String = "") extends RoutingState(RootState)
+case object LoginState extends RoutingState(RootState)
 
 case object RPCDemoState extends RoutingState(RootState)
-
-case object DemoStylesState extends RoutingState(RootState)

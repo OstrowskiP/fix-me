@@ -3,13 +3,20 @@ package pl.lodz.p.edu.views
 import io.udash._
 import pl.lodz.p.edu.LoginState
 import pl.lodz.p.edu.styles.DemoStyles
+
 import scalacss.ScalatagsCss._
 
-case class LoginViewPresenter(loginStr: String, passwordStr: String) extends DefaultViewPresenterFactory[LoginState](() => {
+class LoginPresenter extends Presenter[LoginState.type]{
+  override def handleState(state: LoginState.type): Unit = {
+
+  }
+}
+
+case object LoginViewPresenter extends DefaultViewPresenterFactory[LoginState.type](() => {
   import pl.lodz.p.edu.Context._
 
-  val login = Property[String](loginStr)
-  val password = Property[String](passwordStr)
+  val login = Property[String]
+  val password = Property[String]
   new LoginView(login, password)
 })
 
@@ -33,7 +40,7 @@ class LoginView(login: Property[String], password: Property[String]) extends Vie
         p("Hasło:")
       ),
       li(DemoStyles.navItem)(
-        TextInput.debounced(password, placeholder := "Twoje hasło")
+        PasswordInput.debounced(password, placeholder := "Twoje hasło")
       )
     ),
     p("Wpisałeś login: ", bind(login)),

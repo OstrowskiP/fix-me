@@ -1,16 +1,16 @@
-[info] Fast optimizing /home/postrowski/Desktop/Projects/fix-me/frontend/target/UdashStatic/WebContent/scripts/frontend-impl-fast.js
-[debug] Linker: Compute reachability: 379650 us
-[debug] Linker: Assemble LinkedClasses: 844903 us
-[debug] Basic Linking: 1242278 us
-[debug] Inc. optimizer: Batch mode: true
-[debug] Inc. optimizer: Incremental part: 409074 us
-[debug] Inc. optimizer: Optimizing 11054 methods.
-[debug] Inc. optimizer: Optimizer part: 4780061 us
-[debug] Inc. optimizer: 5210004 us
-[debug] Refiner: Compute reachability: 136061 us
-[debug] Refiner: Assemble LinkedClasses: 15106 us
-[debug] Refiner: 152890 us
-[debug] Emitter: Class tree cache stats: reused: 1116 -- invalidated: 1132
-[debug] Emitter: Method tree cache stats: resued: 0 -- invalidated: 5367
-[debug] Emitter (write output): 1050109 us
-[debug] Global IR cache stats: reused: 0 -- invalidated: 80 -- trees read: 1311
+[0m[[0minfo[0m] [0mFast optimizing /home/postrowski/Desktop/Projects/fix-me/frontend/target/UdashStatic/WebContent/scripts/frontend-impl-fast.js[0m
+[0m[[0mdebug[0m] [0mLinker: Compute reachability: 286374 us[0m
+[0m[[0mdebug[0m] [0mLinker: Assemble LinkedClasses: 216361 us[0m
+[0m[[0mdebug[0m] [0mBasic Linking: 512657 us[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: Batch mode: false[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: Incremental part: 85701 us[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: Optimizing 0 methods.[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: Optimizer part: 139 us[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: 92610 us[0m
+[0m[[0mdebug[0m] [0mRefiner: Compute reachability: 178674 us[0m
+[0m[[0mdebug[0m] [0mRefiner: Assemble LinkedClasses: 25552 us[0m
+[0m[[0mdebug[0m] [0mRefiner: 208987 us[0m
+[0m[[0mdebug[0m] [0mEmitter: Class tree cache stats: reused: 2236 -- invalidated: 2[0m
+[0m[[0mdebug[0m] [0mEmitter: Method tree cache stats: resued: 5335 -- invalidated: 0[0m
+[0m[[0mdebug[0m] [0mEmitter (write output): 272272 us[0m
+[0m[[0mdebug[0m] [0mGlobal IR cache stats: reused: 70 -- invalidated: 3 -- trees read: 2[0m

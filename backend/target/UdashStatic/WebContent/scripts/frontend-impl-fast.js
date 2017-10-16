@@ -3162,23 +3162,6 @@ $h_Lio_udash_routing_$div$colon$div$.prototype = $c_Lio_udash_routing_$div$colon
 $c_Lio_udash_routing_$div$colon$div$.prototype.init___ = (function() {
   return this
 });
-$c_Lio_udash_routing_$div$colon$div$.prototype.unapply__T__s_Option = (function(path) {
-  var this$2 = new $c_sci_StringOps().init___T(path);
-  var strippedPath = $f_sci_StringLike__stripSuffix__T__T(this$2, "/");
-  var splitIndex = $uI(strippedPath.lastIndexOf("/"));
-  if ((splitIndex === (-1))) {
-    return $m_s_None$()
-  } else {
-    var left = $as_T(strippedPath.substring(0, splitIndex));
-    var beginIndex = ((1 + splitIndex) | 0);
-    var endIndex = $uI(strippedPath.length);
-    var right = $as_T(strippedPath.substring(beginIndex, endIndex));
-    return new $c_s_Some().init___O(new $c_T2().init___O__O(left, right))
-  }
-});
-$c_Lio_udash_routing_$div$colon$div$.prototype.apply__T__T__T = (function(left, right) {
-  return ((left + "/") + right)
-});
 var $d_Lio_udash_routing_$div$colon$div$ = new $TypeData().initClass({
   Lio_udash_routing_$div$colon$div$: 0
 }, false, "io.udash.routing.$div$colon$div$", {
@@ -3228,7 +3211,7 @@ $c_Lio_udash_routing_RoutingEngine.prototype.getUpdatablePathSize__p1__sci_List_
         var x$2 = this$1.matchStateToResolver__Lpl_lodz_p_edu_RoutingState__Lio_udash_core_ViewPresenter($as_Lpl_lodz_p_edu_RoutingState(head1));
         var this$2 = this.viewPresenterRegistry$1;
         var x$3 = this$2.matchStateToResolver__Lpl_lodz_p_edu_RoutingState__Lio_udash_core_ViewPresenter($as_Lpl_lodz_p_edu_RoutingState(head2));
-        if (((x$2 === null) ? (x$3 === null) : x$2.equals__O__Z(x$3))) {
+        if ((x$2 === x$3)) {
           var temp$acc = ((1 + acc) | 0);
           path = tail1;
           oldPath = tail2;
@@ -3292,7 +3275,7 @@ $c_Lio_udash_routing_RoutingEngine.prototype.getStatePath__p1__Lio_udash_core_St
   _getStatePath: while (true) {
     var x1 = forState;
     var x$3 = this.rootState$1;
-    if (((x1 === null) ? (x$3 === null) : x1.equals__O__Z(x$3))) {
+    if ((x1 === x$3)) {
       var x$6 = this.rootState$1;
       var this$1 = acc;
       return new $c_sci_$colon$colon().init___O__sci_List(x$6, this$1)
@@ -3416,7 +3399,7 @@ $c_Lio_udash_routing_RoutingEngine.prototype.handleUrl__T__V = (function(url) {
     acc = currentState.parentState$1;
     these = $as_sc_LinearSeqOptimized(these.tail__O())
   };
-  if ((!((newState === null) ? (oldState === null) : newState.equals__O__Z(oldState)))) {
+  if ((newState !== oldState)) {
     var this$27 = this.io$udash$routing$RoutingEngine$$callbacks$1;
     var i$2 = 0;
     var top = this$27.size0$6;
@@ -4330,10 +4313,8 @@ function $m_Lpl_lodz_p_edu_Context$() {
 function $c_Lpl_lodz_p_edu_config_ExternalUrls$() {
   $c_O.call(this);
   this.projectGithub$1 = null;
-  this.udashDemos$1 = null;
   this.googleMapLocation$1 = null;
-  this.authorMail$1 = null;
-  this.homepage$1 = null
+  this.authorMail$1 = null
 }
 $c_Lpl_lodz_p_edu_config_ExternalUrls$.prototype = new $h_O();
 $c_Lpl_lodz_p_edu_config_ExternalUrls$.prototype.constructor = $c_Lpl_lodz_p_edu_config_ExternalUrls$;
@@ -4344,10 +4325,8 @@ function $h_Lpl_lodz_p_edu_config_ExternalUrls$() {
 $h_Lpl_lodz_p_edu_config_ExternalUrls$.prototype = $c_Lpl_lodz_p_edu_config_ExternalUrls$.prototype;
 $c_Lpl_lodz_p_edu_config_ExternalUrls$.prototype.init___ = (function() {
   this.projectGithub$1 = "https://github.com/OstrowskiP/fix-me";
-  this.udashDemos$1 = "https://github.com/UdashFramework/udash-demos";
   this.googleMapLocation$1 = "https://www.google.pl/maps/place/University+Business+Park+2,+W%C3%B3lcza%C5%84ska+180,+90-530+%C5%81%C3%B3d%C5%BA/@51.7529458,19.4551662,18z/data=!4m5!3m4!1s0x471a34d9f647d03d:0x128c7ce860c2e74e!8m2!3d51.7531201!4d19.4561857";
   this.authorMail$1 = "mailto:213576@edu.p.lodz.pl";
-  this.homepage$1 = "http://udash.io/";
   return this
 });
 var $d_Lpl_lodz_p_edu_config_ExternalUrls$ = new $TypeData().initClass({
@@ -4499,7 +4478,7 @@ function $h_Lpl_lodz_p_edu_styles_fonts_FontFamily$() {
 }
 $h_Lpl_lodz_p_edu_styles_fonts_FontFamily$.prototype = $c_Lpl_lodz_p_edu_styles_fonts_FontFamily$.prototype;
 $c_Lpl_lodz_p_edu_styles_fonts_FontFamily$.prototype.init___ = (function() {
-  this.Acumin$1 = "'acumin-pro', san-serif";
+  this.Acumin$1 = "san-serif";
   return this
 });
 var $d_Lpl_lodz_p_edu_styles_fonts_FontFamily$ = new $TypeData().initClass({
@@ -4535,72 +4514,67 @@ $c_Lpl_lodz_p_edu_views_components_Footer$.prototype.init___ = (function() {
 $c_Lpl_lodz_p_edu_views_components_Footer$.prototype.template$lzycompute__p1__Lorg_scalajs_dom_raw_HTMLElement = (function() {
   if ((!this.bitmap$0$1)) {
     var this$1 = $m_Lscalatags_JsDom$all$();
-    var jsx$28 = this$1.footer__Lscalatags_JsDom$TypedTag();
+    var jsx$25 = this$1.footer__Lscalatags_JsDom$TypedTag();
     var this$2 = $m_Lscalacss_ScalatagsCss$();
     var s = $m_Lpl_lodz_p_edu_styles_partials_FooterStyles$().footer$3;
-    var jsx$27 = jsx$28.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$2, s)]));
+    var jsx$24 = jsx$25.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$2, s)]));
     var this$3 = $m_Lscalatags_JsDom$all$();
-    var jsx$26 = this$3.div__Lscalatags_JsDom$TypedTag();
+    var jsx$23 = this$3.div__Lscalatags_JsDom$TypedTag();
     var this$4 = $m_Lscalacss_ScalatagsCss$();
     var s$1 = $m_Lpl_lodz_p_edu_styles_GlobalStyles$().body$3;
-    var jsx$25 = jsx$26.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$4, s$1)]));
+    var jsx$22 = jsx$23.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$4, s$1)]));
     var this$5 = $m_Lscalatags_JsDom$all$();
-    var jsx$24 = this$5.div__Lscalatags_JsDom$TypedTag();
+    var jsx$21 = this$5.div__Lscalatags_JsDom$TypedTag();
     var this$6 = $m_Lscalacss_ScalatagsCss$();
     var s$2 = $m_Lpl_lodz_p_edu_styles_partials_FooterStyles$().footerInner$3;
-    var jsx$23 = jsx$24.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$6, s$2)]));
+    var jsx$20 = jsx$21.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$6, s$2)]));
     var this$7 = $m_Lscalatags_JsDom$all$();
-    var jsx$22 = this$7.a__Lscalatags_JsDom$TypedTag();
+    var jsx$19 = this$7.a__Lscalatags_JsDom$TypedTag();
     var this$8 = $m_Lscalacss_ScalatagsCss$();
     var s$3 = $m_Lpl_lodz_p_edu_styles_partials_FooterStyles$().footerLogo$3;
-    var jsx$21 = jsx$22.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$8, s$3), $m_Lscalatags_JsDom$all$().href__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($m_Lpl_lodz_p_edu_config_ExternalUrls$().homepage$1, $m_Lscalatags_JsDom$all$().stringAttr$1)]));
-    var jsx$20 = $m_Lpl_lodz_p_edu_views_components_Image$();
+    var jsx$18 = jsx$19.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$8, s$3), $m_Lscalatags_JsDom$all$().href__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($m_Lpl_lodz_p_edu_IndexState$().url__Lio_udash_Application__T($m_Lpl_lodz_p_edu_Context$().applicationInstance$1), $m_Lscalatags_JsDom$all$().stringAttr$1)]));
+    var jsx$17 = $m_Lpl_lodz_p_edu_views_components_Image$();
     var this$9 = $m_Lscalacss_ScalatagsCss$();
     var s$4 = $m_Lpl_lodz_p_edu_styles_GlobalStyles$().block$3;
-    var jsx$19 = jsx$21.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$20.apply__T__T__sc_Seq__Lscalatags_JsDom$TypedTag("fixme_logo.png", "Udash Framework", new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$9, s$4)]))]));
+    var jsx$16 = jsx$18.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$17.apply__T__T__sc_Seq__Lscalatags_JsDom$TypedTag("fixme_logo.png", "Udash Framework", new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$9, s$4)]))]));
     var this$10 = $m_Lscalatags_JsDom$all$();
-    var jsx$18 = this$10.div__Lscalatags_JsDom$TypedTag();
+    var jsx$15 = this$10.div__Lscalatags_JsDom$TypedTag();
     var this$11 = $m_Lscalacss_ScalatagsCss$();
     var s$5 = $m_Lpl_lodz_p_edu_styles_partials_FooterStyles$().footerLinks$3;
-    var jsx$17 = jsx$18.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$11, s$5)]));
+    var jsx$14 = jsx$15.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$11, s$5)]));
     var this$12 = $m_Lscalatags_JsDom$all$();
-    var jsx$16 = this$12.p__Lscalatags_JsDom$TypedTag();
+    var jsx$13 = this$12.p__Lscalatags_JsDom$TypedTag();
     var this$13 = $m_Lscalacss_ScalatagsCss$();
     var s$6 = $m_Lpl_lodz_p_edu_styles_partials_FooterStyles$().footerMore$3;
-    var jsx$15 = jsx$16.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$13, s$6)])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([($m_Lscalatags_JsDom$all$(), new $c_Lscalatags_JsDom$StringFrag().init___T("Nasze dane"))]));
+    var jsx$12 = jsx$13.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$13, s$6)])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([($m_Lscalatags_JsDom$all$(), new $c_Lscalatags_JsDom$StringFrag().init___T("Nasze dane"))]));
     var this$15 = $m_Lscalatags_JsDom$all$();
-    var jsx$14 = this$15.ul__Lscalatags_JsDom$TypedTag();
+    var jsx$11 = this$15.ul__Lscalatags_JsDom$TypedTag();
     var this$16 = $m_Lscalatags_JsDom$all$();
-    var jsx$13 = this$16.li__Lscalatags_JsDom$TypedTag();
+    var jsx$10 = this$16.li__Lscalatags_JsDom$TypedTag();
     var this$17 = $m_Lscalacss_ScalatagsCss$();
     var s$7 = $m_Lpl_lodz_p_edu_styles_DemoStyles$().navItem$3;
-    var jsx$12 = jsx$13.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$17, s$7)]));
+    var jsx$9 = jsx$10.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$17, s$7)]));
     var this$18 = $m_Lscalatags_JsDom$all$();
-    var jsx$11 = jsx$12.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this$18.p__Lscalatags_JsDom$TypedTag().apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([($m_Lscalatags_JsDom$all$(), new $c_Lscalatags_JsDom$StringFrag().init___T("FixME, ul. W\u00f3lcza\u0144ska 180, 90-530 \u0141\u00f3d\u017a"))]))]));
+    var jsx$8 = jsx$9.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this$18.p__Lscalatags_JsDom$TypedTag().apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([($m_Lscalatags_JsDom$all$(), new $c_Lscalatags_JsDom$StringFrag().init___T("FixME, ul. W\u00f3lcza\u0144ska 180, 90-530 \u0141\u00f3d\u017a"))]))]));
     var this$20 = $m_Lscalatags_JsDom$all$();
-    var jsx$10 = this$20.li__Lscalatags_JsDom$TypedTag();
+    var jsx$7 = this$20.li__Lscalatags_JsDom$TypedTag();
     var this$21 = $m_Lscalacss_ScalatagsCss$();
     var s$8 = $m_Lpl_lodz_p_edu_styles_DemoStyles$().navItem$3;
-    var jsx$9 = jsx$10.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$21, s$8)]));
+    var jsx$6 = jsx$7.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$21, s$8)]));
     var this$22 = $m_Lscalatags_JsDom$all$();
-    var jsx$8 = this$22.a__Lscalatags_JsDom$TypedTag();
-    var jsx$7 = $m_Lscalatags_JsDom$all$().href__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($m_Lpl_lodz_p_edu_config_ExternalUrls$().googleMapLocation$1, $m_Lscalatags_JsDom$all$().stringAttr$1);
-    var jsx$6 = $m_Lscalatags_JsDom$all$().target__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("_blank", $m_Lscalatags_JsDom$all$().stringAttr$1);
-    var this$23 = $m_Lscalacss_ScalatagsCss$();
-    var s$9 = $m_Lpl_lodz_p_edu_styles_DemoStyles$().underlineLink$3;
-    var jsx$5 = jsx$17.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$15, jsx$14.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$11, jsx$9.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$8.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$7, jsx$6, new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$23, s$9)])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([($m_Lscalatags_JsDom$all$(), new $c_Lscalatags_JsDom$StringFrag().init___T("Dojazd"))]))]))]))]));
-    var this$25 = $m_Lscalatags_JsDom$all$();
-    var jsx$4 = this$25.p__Lscalatags_JsDom$TypedTag();
-    var this$26 = $m_Lscalacss_ScalatagsCss$();
-    var s$10 = $m_Lpl_lodz_p_edu_styles_partials_FooterStyles$().footerCopyrights$3;
-    var jsx$3 = jsx$4.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$26, s$10)]));
+    var jsx$5 = jsx$14.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$12, jsx$11.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$8, jsx$6.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this$22.a__Lscalatags_JsDom$TypedTag().apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().href__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($m_Lpl_lodz_p_edu_config_ExternalUrls$().googleMapLocation$1, $m_Lscalatags_JsDom$all$().stringAttr$1), $m_Lscalatags_JsDom$all$().target__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("_blank", $m_Lscalatags_JsDom$all$().stringAttr$1)])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([($m_Lscalatags_JsDom$all$(), new $c_Lscalatags_JsDom$StringFrag().init___T("Dojazd"))]))]))]))]));
+    var this$24 = $m_Lscalatags_JsDom$all$();
+    var jsx$4 = this$24.p__Lscalatags_JsDom$TypedTag();
+    var this$25 = $m_Lscalacss_ScalatagsCss$();
+    var s$9 = $m_Lpl_lodz_p_edu_styles_partials_FooterStyles$().footerCopyrights$3;
+    var jsx$3 = jsx$4.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$25, s$9)]));
     $m_Lscalatags_JsDom$all$();
     var jsx$2 = new $c_Lscalatags_JsDom$StringFrag().init___T("Wykonane przez ");
-    var this$28 = $m_Lscalatags_JsDom$all$();
-    var jsx$1 = this$28.a__Lscalatags_JsDom$TypedTag();
-    var this$29 = $m_Lscalacss_ScalatagsCss$();
-    var s$11 = $m_Lpl_lodz_p_edu_styles_partials_FooterStyles$().footerAvsystemLink$3;
-    this.template$1 = jsx$27.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$25.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$23.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$19, jsx$5, jsx$3.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$2, jsx$1.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$29, s$11), $m_Lscalatags_JsDom$all$().href__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($m_Lpl_lodz_p_edu_config_ExternalUrls$().authorMail$1, $m_Lscalatags_JsDom$all$().stringAttr$1), $m_Lscalatags_JsDom$all$().target__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("_blank", $m_Lscalatags_JsDom$all$().stringAttr$1)])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([($m_Lscalatags_JsDom$all$(), new $c_Lscalatags_JsDom$StringFrag().init___T("Piotr Ostrowski"))]))]))]))]))])).render__Lorg_scalajs_dom_raw_Element();
+    var this$27 = $m_Lscalatags_JsDom$all$();
+    var jsx$1 = this$27.a__Lscalatags_JsDom$TypedTag();
+    var this$28 = $m_Lscalacss_ScalatagsCss$();
+    var s$10 = $m_Lpl_lodz_p_edu_styles_partials_FooterStyles$().footerAvsystemLink$3;
+    this.template$1 = jsx$24.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$22.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$20.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$16, jsx$5, jsx$3.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$2, jsx$1.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$28, s$10), $m_Lscalatags_JsDom$all$().href__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($m_Lpl_lodz_p_edu_config_ExternalUrls$().authorMail$1, $m_Lscalatags_JsDom$all$().stringAttr$1), $m_Lscalatags_JsDom$all$().target__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("_blank", $m_Lscalatags_JsDom$all$().stringAttr$1)])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([($m_Lscalatags_JsDom$all$(), new $c_Lscalatags_JsDom$StringFrag().init___T("Piotr Ostrowski"))]))]))]))]))])).render__Lorg_scalajs_dom_raw_Element();
     this.bitmap$0$1 = true
   };
   return this.template$1
@@ -4695,7 +4669,7 @@ $c_Lpl_lodz_p_edu_views_components_Header$.prototype.template$lzycompute__p1__Lo
     var jsx$12 = jsx$13.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$20, s$10)]));
     var this$21 = $m_Lscalatags_JsDom$all$();
     var jsx$11 = this$21.a__Lscalatags_JsDom$TypedTag();
-    var jsx$10 = $m_Lscalatags_JsDom$all$().href__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair(new $c_Lpl_lodz_p_edu_LoginState().init___T__T("", "").url__Lio_udash_Application__T($m_Lpl_lodz_p_edu_Context$().applicationInstance$1), $m_Lscalatags_JsDom$all$().stringAttr$1);
+    var jsx$10 = $m_Lscalatags_JsDom$all$().href__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($m_Lpl_lodz_p_edu_LoginState$().url__Lio_udash_Application__T($m_Lpl_lodz_p_edu_Context$().applicationInstance$1), $m_Lscalatags_JsDom$all$().stringAttr$1);
     var this$22 = $m_Lscalacss_ScalatagsCss$();
     var s$11 = $m_Lpl_lodz_p_edu_styles_partials_HeaderStyles$().headerSocialLinkYellow$3;
     var jsx$9 = jsx$11.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$10, new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$22, s$11)]));
@@ -18555,19 +18529,14 @@ $c_Lpl_lodz_p_edu_StatesToViewPresenterDef.prototype.matchStateToResolver__Lpl_l
     var x$3 = $m_Lpl_lodz_p_edu_IndexState$();
     if ((x$3 === state)) {
       return $m_Lpl_lodz_p_edu_views_IndexViewPresenter$()
-    } else if ($is_Lpl_lodz_p_edu_LoginState(state)) {
-      var x2 = $as_Lpl_lodz_p_edu_LoginState(state);
-      var login = x2.login$2;
-      var password = x2.password$2;
-      return new $c_Lpl_lodz_p_edu_views_LoginViewPresenter().init___T__T(login, password)
     } else {
-      var x$5 = $m_Lpl_lodz_p_edu_RPCDemoState$();
+      var x$5 = $m_Lpl_lodz_p_edu_LoginState$();
       if ((x$5 === state)) {
-        return $m_Lpl_lodz_p_edu_views_RPCDemoViewPresenter$()
+        return $m_Lpl_lodz_p_edu_views_LoginViewPresenter$()
       } else {
-        var x$7 = $m_Lpl_lodz_p_edu_DemoStylesState$();
+        var x$7 = $m_Lpl_lodz_p_edu_RPCDemoState$();
         if ((x$7 === state)) {
-          return $m_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$()
+          return $m_Lpl_lodz_p_edu_views_RPCDemoViewPresenter$()
         } else {
           return $m_Lpl_lodz_p_edu_views_ErrorViewPresenter$()
         }
@@ -18611,92 +18580,6 @@ var $d_Lpl_lodz_p_edu_rpc_RPCService = new $TypeData().initClass({
   Lpl_lodz_p_edu_rpc_MainClientRPC: 1
 });
 $c_Lpl_lodz_p_edu_rpc_RPCService.prototype.$classData = $d_Lpl_lodz_p_edu_rpc_RPCService;
-/** @constructor */
-function $c_Lpl_lodz_p_edu_views_DemoStylesView() {
-  $c_O.call(this);
-  this.LocalStyles$module$1 = null;
-  this.content$1 = null
-}
-$c_Lpl_lodz_p_edu_views_DemoStylesView.prototype = new $h_O();
-$c_Lpl_lodz_p_edu_views_DemoStylesView.prototype.constructor = $c_Lpl_lodz_p_edu_views_DemoStylesView;
-/** @constructor */
-function $h_Lpl_lodz_p_edu_views_DemoStylesView() {
-  /*<skip>*/
-}
-$h_Lpl_lodz_p_edu_views_DemoStylesView.prototype = $c_Lpl_lodz_p_edu_views_DemoStylesView.prototype;
-$c_Lpl_lodz_p_edu_views_DemoStylesView.prototype.init___ = (function() {
-  var this$1 = $m_Lscalatags_JsDom$all$();
-  var jsx$17 = this$1.div__Lscalatags_JsDom$TypedTag();
-  var this$6 = this.LocalStyles__Lpl_lodz_p_edu_views_DemoStylesView$LocalStyles$();
-  $m_Lscalacss_package$DevDefaults$();
-  var s = $m_Lscalacss_internal_StringRenderer$().defaultPretty__Lscalacss_internal_Renderer();
-  var r = new $c_Lscalacss_ScalatagsJsDomRenderer().init___Lscalacss_internal_Renderer(s);
-  $m_Lscalacss_package$DevDefaults$();
-  var env = $m_Lscalacss_internal_Env$().empty$1;
-  var jsx$16 = $as_Lscalatags_generic_Modifier(this$6.cssRegister$2.render__Lscalacss_internal_Renderer__Lscalacss_internal_Env__O(r, env));
-  var this$7 = $m_Lscalatags_JsDom$all$();
-  var jsx$15 = this$7.h2__Lscalatags_JsDom$TypedTag();
-  $m_Lscalatags_JsDom$all$();
-  var jsx$14 = new $c_Lscalatags_JsDom$StringFrag().init___T("You can find this demo source code in: ");
-  var this$9 = $m_Lscalatags_JsDom$all$();
-  var jsx$13 = jsx$15.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$14, this$9.i__Lscalatags_JsDom$TypedTag().apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([($m_Lscalatags_JsDom$all$(), new $c_Lscalatags_JsDom$StringFrag().init___T("pl.lodz.p.edu.views.DemoStylesView"))]))]));
-  var this$11 = $m_Lscalatags_JsDom$all$();
-  var jsx$12 = this$11.h3__Lscalatags_JsDom$TypedTag().apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([($m_Lscalatags_JsDom$all$(), new $c_Lscalatags_JsDom$StringFrag().init___T("Example"))]));
-  var this$13 = $m_Lscalatags_JsDom$all$();
-  var jsx$11 = this$13.p__Lscalatags_JsDom$TypedTag();
-  var this$14 = $m_Lscalacss_ScalatagsCss$();
-  var s$1 = this.LocalStyles__Lpl_lodz_p_edu_views_DemoStylesView$LocalStyles$().redItalic$3;
-  var jsx$10 = jsx$11.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$14, s$1)])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([($m_Lscalatags_JsDom$all$(), new $c_Lscalatags_JsDom$StringFrag().init___T("Red italic text."))]));
-  var this$16 = $m_Lscalatags_JsDom$all$();
-  var jsx$9 = this$16.p__Lscalatags_JsDom$TypedTag();
-  var this$17 = $m_Lscalacss_ScalatagsCss$();
-  var s$2 = this.LocalStyles__Lpl_lodz_p_edu_views_DemoStylesView$LocalStyles$().obliqueOnHover$3;
-  var jsx$8 = jsx$9.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$17, s$2)])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([($m_Lscalatags_JsDom$all$(), new $c_Lscalatags_JsDom$StringFrag().init___T("Hover me!"))]));
-  var this$19 = $m_Lscalatags_JsDom$all$();
-  var jsx$7 = this$19.h3__Lscalatags_JsDom$TypedTag().apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([($m_Lscalatags_JsDom$all$(), new $c_Lscalatags_JsDom$StringFrag().init___T("Read more"))]));
-  var this$21 = $m_Lscalatags_JsDom$all$();
-  var jsx$6 = this$21.ul__Lscalatags_JsDom$TypedTag();
-  var this$22 = $m_Lscalatags_JsDom$all$();
-  var jsx$5 = this$22.li__Lscalatags_JsDom$TypedTag();
-  var this$23 = $m_Lscalatags_JsDom$all$();
-  var jsx$4 = this$23.a__Lscalatags_JsDom$TypedTag();
-  var this$24 = $m_Lscalacss_ScalatagsCss$();
-  var s$3 = $m_Lpl_lodz_p_edu_styles_DemoStyles$().underlineLinkBlack$3;
-  var jsx$3 = jsx$5.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$4.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$24, s$3)])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().href__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("http://guide.udash.io/#/frontend/templates", $m_Lscalatags_JsDom$all$().stringAttr$1), $m_Lscalatags_JsDom$all$().target__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("_blank", $m_Lscalatags_JsDom$all$().stringAttr$1)])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([($m_Lscalatags_JsDom$all$(), new $c_Lscalatags_JsDom$StringFrag().init___T("Read more in Udash Guide."))]))]));
-  var this$26 = $m_Lscalatags_JsDom$all$();
-  var jsx$2 = this$26.li__Lscalatags_JsDom$TypedTag();
-  var this$27 = $m_Lscalatags_JsDom$all$();
-  var jsx$1 = this$27.a__Lscalatags_JsDom$TypedTag();
-  var this$28 = $m_Lscalacss_ScalatagsCss$();
-  var s$4 = $m_Lpl_lodz_p_edu_styles_DemoStyles$().underlineLinkBlack$3;
-  this.content$1 = jsx$17.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$16, jsx$13, jsx$12, jsx$10, jsx$8, jsx$7, jsx$6.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$3, jsx$2.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$1.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$28, s$4)])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().href__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("https://japgolly.github.io/scalacss/book/", $m_Lscalatags_JsDom$all$().stringAttr$1), $m_Lscalatags_JsDom$all$().target__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("_blank", $m_Lscalatags_JsDom$all$().stringAttr$1)])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([($m_Lscalatags_JsDom$all$(), new $c_Lscalatags_JsDom$StringFrag().init___T("Read more in ScalaCSS docs."))]))]))]))]));
-  return this
-});
-$c_Lpl_lodz_p_edu_views_DemoStylesView.prototype.content__p1__Lscalatags_JsDom$TypedTag = (function() {
-  return this.content$1
-});
-$c_Lpl_lodz_p_edu_views_DemoStylesView.prototype.LocalStyles__Lpl_lodz_p_edu_views_DemoStylesView$LocalStyles$ = (function() {
-  if ((this.LocalStyles$module$1 === null)) {
-    this.LocalStyles$lzycompute$1__p1__V()
-  };
-  return this.LocalStyles$module$1
-});
-$c_Lpl_lodz_p_edu_views_DemoStylesView.prototype.LocalStyles$lzycompute$1__p1__V = (function() {
-  if ((this.LocalStyles$module$1 === null)) {
-    this.LocalStyles$module$1 = new $c_Lpl_lodz_p_edu_views_DemoStylesView$LocalStyles$().init___Lpl_lodz_p_edu_views_DemoStylesView(this)
-  }
-});
-$c_Lpl_lodz_p_edu_views_DemoStylesView.prototype.renderChild__Lio_udash_core_View__V = (function(view) {
-  /*<skip>*/
-});
-var $d_Lpl_lodz_p_edu_views_DemoStylesView = new $TypeData().initClass({
-  Lpl_lodz_p_edu_views_DemoStylesView: 0
-}, false, "pl.lodz.p.edu.views.DemoStylesView", {
-  Lpl_lodz_p_edu_views_DemoStylesView: 1,
-  O: 1,
-  Lio_udash_core_View: 1
-});
-$c_Lpl_lodz_p_edu_views_DemoStylesView.prototype.$classData = $d_Lpl_lodz_p_edu_views_DemoStylesView;
 /** @constructor */
 function $c_Lpl_lodz_p_edu_views_ErrorView() {
   $c_O.call(this);
@@ -18744,7 +18627,7 @@ $c_Lpl_lodz_p_edu_views_IndexView.prototype.init___ = (function() {
   var this$1 = $m_Lscalatags_JsDom$all$();
   var jsx$1 = this$1.div__Lscalatags_JsDom$TypedTag();
   var this$2 = $m_Lscalatags_JsDom$all$();
-  this.content$1 = jsx$1.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this$2.p__Lscalatags_JsDom$TypedTag().apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([($m_Lscalatags_JsDom$all$(), new $c_Lscalatags_JsDom$StringFrag().init___T("Nasz serwis oferuj\u0119 napraw\u0119 sprz\u0119tu elektronicznego bez konieczno\u015bci wychodzenia z domu! To co wyr\u00f3\u017cnia nas od konkurencji to mo\u017cliwo\u015b\u0107 zam\u00f3wienia serwisu z napraw\u0105 na miejsculub z odbiorem sprz\u0119tu przez naszego pracownika (je\u015bli naprawa wymaga specjalistycznego sprz\u0119tu i naszego laboratorium).Wystarczy, \u017ce wype\u0142nisz zg\u0142oszenie serwisowe, nasz praacownik odezwie si\u0119 do Ciebie i um\u00f3wi w dogodnej dla Ciebie dacie.Zach\u0119camy do za\u0142o\u017cenia swojego konta, b\u0119dziesz m\u00f3g\u0142 na bie\u017c\u0105co \u015bledzi\u0107 status swoich zg\u0142osze\u0144 oraz przejrze\u0107 ich histori\u0119."))]))]));
+  this.content$1 = jsx$1.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this$2.p__Lscalatags_JsDom$TypedTag().apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([($m_Lscalatags_JsDom$all$(), new $c_Lscalatags_JsDom$StringFrag().init___T("Nasz serwis oferuj\u0119 napraw\u0119 sprz\u0119tu elektronicznego bez konieczno\u015bci wychodzenia z domu! To co wyr\u00f3\u017cnia nas od konkurencji to mo\u017cliwo\u015b\u0107 zam\u00f3wienia serwisu z napraw\u0105 na miejscu lub z odbiorem sprz\u0119tu przez naszego pracownika (je\u015bli naprawa wymaga specjalistycznego sprz\u0119tu i naszego laboratorium).Wystarczy, \u017ce wype\u0142nisz zg\u0142oszenie serwisowe, nasz praacownik odezwie si\u0119 do Ciebie i um\u00f3wi w dogodnej dla Ciebie dacie.Zach\u0119camy do za\u0142o\u017cenia swojego konta, b\u0119dziesz m\u00f3g\u0142 na bie\u017c\u0105co \u015bledzi\u0107 status swoich zg\u0142osze\u0144 oraz przejrze\u0107 ich histori\u0119."))]))]));
   return this
 });
 $c_Lpl_lodz_p_edu_views_IndexView.prototype.content__p1__Lscalatags_JsDom$TypedTag = (function() {
@@ -18808,7 +18691,7 @@ $c_Lpl_lodz_p_edu_views_LoginView.prototype.init___Lio_udash_properties_single_P
   var jsx$3 = this$16.li__Lscalatags_JsDom$TypedTag();
   var this$17 = $m_Lscalacss_ScalatagsCss$();
   var s$3 = $m_Lpl_lodz_p_edu_styles_DemoStyles$().navItem$3;
-  var jsx$2 = jsx$7.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$4, jsx$3.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$17, s$3)])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lio_udash_package$().TextInput$1.debounced__Lio_udash_properties_single_Property__sc_Seq__Lscalatags_JsDom$TypedTag(password, new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().placeholder__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("Twoje has\u0142o", $m_Lscalatags_JsDom$all$().stringAttr$1)]))]))]));
+  var jsx$2 = jsx$7.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([jsx$4, jsx$3.apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_ScalatagsJsDomImplicits$$anon$1().init___Lscalacss_ScalatagsJsDomImplicits__Lscalacss_internal_StyleA(this$17, s$3)])).apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lio_udash_package$().PasswordInput$1.debounced__Lio_udash_properties_single_Property__sc_Seq__Lscalatags_JsDom$TypedTag(password, new $c_sjs_js_WrappedArray().init___sjs_js_Array([$m_Lscalatags_JsDom$all$().placeholder__Lscalatags_generic_Attr().$$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("Twoje has\u0142o", $m_Lscalatags_JsDom$all$().stringAttr$1)]))]))]));
   var this$18 = $m_Lscalatags_JsDom$all$();
   var jsx$1 = this$18.p__Lscalatags_JsDom$TypedTag().apply__sc_Seq__Lscalatags_JsDom$TypedTag(new $c_sjs_js_WrappedArray().init___sjs_js_Array([($m_Lscalatags_JsDom$all$(), new $c_Lscalatags_JsDom$StringFrag().init___T("Wpisa\u0142e\u015b login: ")), ($m_Lio_udash_package$(), new $c_Lio_udash_bindings_modifiers_SimplePropertyModifier().init___Lio_udash_properties_single_ReadableProperty__Z(login, true))]));
   var this$21 = $m_Lscalatags_JsDom$all$();
@@ -37087,219 +36970,6 @@ function $m_Lpl_lodz_p_edu_styles_utils_StyleUtils$() {
   return $n_Lpl_lodz_p_edu_styles_utils_StyleUtils$
 }
 /** @constructor */
-function $c_Lpl_lodz_p_edu_views_DemoStylesView$LocalStyles$() {
-  $c_Lscalacss_internal_mutable_StyleSheet$Inline.call(this);
-  this.redItalic$3 = null;
-  this.obliqueOnHover$3 = null
-}
-$c_Lpl_lodz_p_edu_views_DemoStylesView$LocalStyles$.prototype = new $h_Lscalacss_internal_mutable_StyleSheet$Inline();
-$c_Lpl_lodz_p_edu_views_DemoStylesView$LocalStyles$.prototype.constructor = $c_Lpl_lodz_p_edu_views_DemoStylesView$LocalStyles$;
-/** @constructor */
-function $h_Lpl_lodz_p_edu_views_DemoStylesView$LocalStyles$() {
-  /*<skip>*/
-}
-$h_Lpl_lodz_p_edu_views_DemoStylesView$LocalStyles$.prototype = $c_Lpl_lodz_p_edu_views_DemoStylesView$LocalStyles$.prototype;
-$c_Lpl_lodz_p_edu_views_DemoStylesView$LocalStyles$.prototype.init___Lpl_lodz_p_edu_views_DemoStylesView = (function($$outer) {
-  var this$1 = $m_Lscalacss_package$DevDefaults$();
-  $c_Lscalacss_internal_mutable_StyleSheet$Inline.prototype.init___Lscalacss_internal_mutable_Register.call(this, new $c_Lscalacss_internal_mutable_Register().init___Lscalacss_internal_mutable_Register$NameGen__Lscalacss_internal_mutable_Register$MacroName__Lscalacss_internal_mutable_Register$ErrorHandler__Lscalacss_internal_mutable_Mutex(this$1.cssRegisterNameGen$1, $m_Lscalacss_internal_mutable_Register$MacroName$Use$(), this$1.cssRegisterErrorHandler$1, $m_Lscalacss_internal_mutable_Mutex$().mutex$1));
-  var this$7 = new $c_Lscalacss_internal_mutable_StyleSheet$Inline$MStyle().init___Lscalacss_internal_mutable_StyleSheet$Inline__T(this, "redItalic");
-  var jsx$3 = this.dsl__Lscalacss_internal_mutable_StyleSheet$Base$dsl$();
-  this.dsl__Lscalacss_internal_mutable_StyleSheet$Base$dsl$();
-  var this$3 = $m_Lscalacss_internal_Attrs$fontStyle$();
-  var jsx$2 = new $c_Lscalacss_internal_DslBase$ToStyle().init___Lscalacss_internal_StyleS(jsx$3.ToStyleAV__Lscalacss_internal_AV__Lscalacss_internal_StyleS(new $c_Lscalacss_internal_AV().init___Lscalacss_internal_Attr__T(this$3.attr$2, "italic")));
-  var jsx$1 = this.dsl__Lscalacss_internal_mutable_StyleSheet$Base$dsl$();
-  this.dsl__Lscalacss_internal_mutable_StyleSheet$Base$dsl$();
-  var this$5 = $m_Lscalacss_internal_Attrs$color$();
-  var array = [jsx$2, new $c_Lscalacss_internal_DslBase$ToStyle().init___Lscalacss_internal_StyleS(jsx$1.ToStyleAV__Lscalacss_internal_AV__Lscalacss_internal_StyleS(new $c_Lscalacss_internal_AV().init___Lscalacss_internal_Attr__T(this$5.attr$4, "red")))];
-  $m_Lscalacss_package$DevDefaults$();
-  var c = $m_Lscalacss_internal_Compose$().safe__Lscalacss_internal_Compose();
-  var this$8 = $m_Lscalacss_internal_Dsl$();
-  if (($uI(array.length) === 0)) {
-    var s1 = this$8.StyleS$3.empty$1
-  } else {
-    $m_sc_Seq$();
-    $m_sjs_js_WrappedArray$();
-    var array$1 = [];
-    var x1 = $uI(array.length);
-    switch (x1) {
-      case (-1): {
-        break
-      }
-    };
-    var i = 0;
-    var len = $uI(array.length);
-    while ((i < len)) {
-      var index = i;
-      var arg1 = array[index];
-      var x$9 = $as_Lscalacss_internal_DslBase$ToStyle(arg1).s$1;
-      array$1.push(x$9);
-      i = ((1 + i) | 0)
-    };
-    var f = (function(this$2$1, c$1) {
-      return (function(x$10$2, x$11$2) {
-        var x$10 = $as_Lscalacss_internal_StyleS(x$10$2);
-        var x$11 = $as_Lscalacss_internal_StyleS(x$11$2);
-        return c$1.apply__Lscalacss_internal_StyleS__Lscalacss_internal_StyleS__Lscalacss_internal_StyleS(x$10, x$11)
-      })
-    })(this$8, c);
-    if (($uI(array$1.length) > 0)) {
-      var start = 1;
-      var end = $uI(array$1.length);
-      var z = array$1[0];
-      var start$1 = start;
-      var z$1 = z;
-      var jsx$4;
-      _foldl: while (true) {
-        if ((start$1 !== end)) {
-          var temp$start = ((1 + start$1) | 0);
-          var arg1$1 = z$1;
-          var index$1 = start$1;
-          var arg2 = array$1[index$1];
-          var temp$z = f(arg1$1, arg2);
-          start$1 = temp$start;
-          z$1 = temp$z;
-          continue _foldl
-        };
-        var jsx$4 = z$1;
-        break
-      }
-    } else {
-      if (($uI(array$1.length) === 0)) {
-        throw new $c_jl_UnsupportedOperationException().init___T("empty.reduceLeft")
-      };
-      var elem$1 = false;
-      elem$1 = true;
-      var elem$1$1 = null;
-      elem$1$1 = 0;
-      var i$1 = 0;
-      var len$1 = $uI(array$1.length);
-      while ((i$1 < len$1)) {
-        var index$2 = i$1;
-        var arg1$2 = array$1[index$2];
-        if (elem$1) {
-          elem$1$1 = arg1$2;
-          elem$1 = false
-        } else {
-          var arg1$3 = elem$1$1;
-          elem$1$1 = f(arg1$3, arg1$2)
-        };
-        i$1 = ((1 + i$1) | 0)
-      };
-      var jsx$4 = elem$1$1
-    };
-    var s1 = $as_Lscalacss_internal_StyleS(jsx$4)
-  };
-  var s2 = this$7.$$outer$1.cssRegister$2.applyMacroName__T__Lscalacss_internal_StyleS__Lscalacss_internal_ClassNameHint__Lscalacss_internal_StyleS(this$7.name$1, s1, this$7.$$outer$1.classNameHint$1);
-  this.redItalic$3 = this$7.$$outer$1.cssRegister$2.registerS__Lscalacss_internal_StyleS__Lscalacss_internal_ClassNameHint__Lscalacss_internal_StyleA(s2, this$7.$$outer$1.classNameHint$1);
-  var this$22 = new $c_Lscalacss_internal_mutable_StyleSheet$Inline$MStyle().init___Lscalacss_internal_mutable_StyleSheet$Inline__T(this, "obliqueOnHover");
-  var jsx$8 = this.dsl__Lscalacss_internal_mutable_StyleSheet$Base$dsl$();
-  this.dsl__Lscalacss_internal_mutable_StyleSheet$Base$dsl$();
-  var this$14 = $m_Lscalacss_internal_Attrs$fontStyle$();
-  var jsx$7 = new $c_Lscalacss_internal_DslBase$ToStyle().init___Lscalacss_internal_StyleS(jsx$8.ToStyleAV__Lscalacss_internal_AV__Lscalacss_internal_StyleS(new $c_Lscalacss_internal_AV().init___Lscalacss_internal_Attr__T(this$14.attr$2, "normal")));
-  this.dsl__Lscalacss_internal_mutable_StyleSheet$Base$dsl$();
-  var this$16 = this.dsl__Lscalacss_internal_mutable_StyleSheet$Base$dsl$();
-  var this$15 = $m_Lscalacss_internal_Cond$().empty$1;
-  var p = $m_Lscalacss_internal_Pseudo$Hover$();
-  var x = this$15.addPseudo__Lscalacss_internal_Pseudo__Lscalacss_internal_Cond(p);
-  var jsx$6 = new $c_Lscalacss_internal_DslBase$DslCond().init___Lscalacss_internal_Cond__Lscalacss_internal_DslBase(x, this$16);
-  var jsx$5 = this.dsl__Lscalacss_internal_mutable_StyleSheet$Base$dsl$();
-  this.dsl__Lscalacss_internal_mutable_StyleSheet$Base$dsl$();
-  var this$18 = $m_Lscalacss_internal_Attrs$fontStyle$();
-  var x$1 = jsx$6.apply__sc_Seq__Lscalacss_internal_Compose__Lscalacss_internal_StyleS(new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_Lscalacss_internal_DslBase$ToStyle().init___Lscalacss_internal_StyleS(jsx$5.ToStyleAV__Lscalacss_internal_AV__Lscalacss_internal_StyleS(new $c_Lscalacss_internal_AV().init___Lscalacss_internal_Attr__T(this$18.attr$2, "oblique")))]), ($m_Lscalacss_package$DevDefaults$(), $m_Lscalacss_internal_Compose$().safe__Lscalacss_internal_Compose()));
-  var array$2 = [jsx$7, new $c_Lscalacss_internal_DslBase$ToStyle().init___Lscalacss_internal_StyleS(x$1)];
-  $m_Lscalacss_package$DevDefaults$();
-  var c$2 = $m_Lscalacss_internal_Compose$().safe__Lscalacss_internal_Compose();
-  var this$23 = $m_Lscalacss_internal_Dsl$();
-  if (($uI(array$2.length) === 0)) {
-    var s1$1 = this$23.StyleS$3.empty$1
-  } else {
-    $m_sc_Seq$();
-    $m_sjs_js_WrappedArray$();
-    var array$3 = [];
-    var x1$1 = $uI(array$2.length);
-    switch (x1$1) {
-      case (-1): {
-        break
-      }
-    };
-    var i$2 = 0;
-    var len$2 = $uI(array$2.length);
-    while ((i$2 < len$2)) {
-      var index$3 = i$2;
-      var arg1$4 = array$2[index$3];
-      var x$9$1 = $as_Lscalacss_internal_DslBase$ToStyle(arg1$4).s$1;
-      array$3.push(x$9$1);
-      i$2 = ((1 + i$2) | 0)
-    };
-    var f$1 = (function(this$2$2, c$3) {
-      return (function(x$10$2$1, x$11$2$1) {
-        var x$10$1 = $as_Lscalacss_internal_StyleS(x$10$2$1);
-        var x$11$1 = $as_Lscalacss_internal_StyleS(x$11$2$1);
-        return c$3.apply__Lscalacss_internal_StyleS__Lscalacss_internal_StyleS__Lscalacss_internal_StyleS(x$10$1, x$11$1)
-      })
-    })(this$23, c$2);
-    if (($uI(array$3.length) > 0)) {
-      var start$2 = 1;
-      var end$1 = $uI(array$3.length);
-      var z$2 = array$3[0];
-      var start$3 = start$2;
-      var z$3 = z$2;
-      var jsx$9;
-      _foldl$1: while (true) {
-        if ((start$3 !== end$1)) {
-          var temp$start$1 = ((1 + start$3) | 0);
-          var arg1$5 = z$3;
-          var index$4 = start$3;
-          var arg2$1 = array$3[index$4];
-          var temp$z$1 = f$1(arg1$5, arg2$1);
-          start$3 = temp$start$1;
-          z$3 = temp$z$1;
-          continue _foldl$1
-        };
-        var jsx$9 = z$3;
-        break
-      }
-    } else {
-      if (($uI(array$3.length) === 0)) {
-        throw new $c_jl_UnsupportedOperationException().init___T("empty.reduceLeft")
-      };
-      var elem$1$2 = false;
-      elem$1$2 = true;
-      var elem$1$3 = null;
-      elem$1$3 = 0;
-      var i$3 = 0;
-      var len$3 = $uI(array$3.length);
-      while ((i$3 < len$3)) {
-        var index$5 = i$3;
-        var arg1$6 = array$3[index$5];
-        if (elem$1$2) {
-          elem$1$3 = arg1$6;
-          elem$1$2 = false
-        } else {
-          var arg1$7 = elem$1$3;
-          elem$1$3 = f$1(arg1$7, arg1$6)
-        };
-        i$3 = ((1 + i$3) | 0)
-      };
-      var jsx$9 = elem$1$3
-    };
-    var s1$1 = $as_Lscalacss_internal_StyleS(jsx$9)
-  };
-  var s2$1 = this$22.$$outer$1.cssRegister$2.applyMacroName__T__Lscalacss_internal_StyleS__Lscalacss_internal_ClassNameHint__Lscalacss_internal_StyleS(this$22.name$1, s1$1, this$22.$$outer$1.classNameHint$1);
-  this.obliqueOnHover$3 = this$22.$$outer$1.cssRegister$2.registerS__Lscalacss_internal_StyleS__Lscalacss_internal_ClassNameHint__Lscalacss_internal_StyleA(s2$1, this$22.$$outer$1.classNameHint$1);
-  return this
-});
-var $d_Lpl_lodz_p_edu_views_DemoStylesView$LocalStyles$ = new $TypeData().initClass({
-  Lpl_lodz_p_edu_views_DemoStylesView$LocalStyles$: 0
-}, false, "pl.lodz.p.edu.views.DemoStylesView$LocalStyles$", {
-  Lpl_lodz_p_edu_views_DemoStylesView$LocalStyles$: 1,
-  Lscalacss_internal_mutable_StyleSheet$Inline: 1,
-  Lscalacss_internal_mutable_StyleSheet$Base: 1,
-  O: 1,
-  Lscalacss_internal_Macros$Dsl$Mixin: 1
-});
-$c_Lpl_lodz_p_edu_views_DemoStylesView$LocalStyles$.prototype.$classData = $d_Lpl_lodz_p_edu_views_DemoStylesView$LocalStyles$;
-/** @constructor */
 function $c_Lscalacss_internal_Attrs$borderBottomLeftRadius$() {
   $c_Lscalacss_internal_ValueT$TypedAttrT2.call(this);
   this.attr$3 = null
@@ -40869,10 +40539,10 @@ $c_Lio_udash_routing_StateChangeEvent.prototype.equals__O__Z = (function(x$1) {
     var StateChangeEvent$1 = $as_Lio_udash_routing_StateChangeEvent(x$1);
     var x = this.currentState$1;
     var x$2 = StateChangeEvent$1.currentState$1;
-    if (((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))) {
+    if ((x === x$2)) {
       var x$3 = this.oldState$1;
       var x$4 = StateChangeEvent$1.oldState$1;
-      return ((x$3 === null) ? (x$4 === null) : x$3.equals__O__Z(x$4))
+      return (x$3 === x$4)
     } else {
       return false
     }
@@ -49010,58 +48680,13 @@ function $h_Lpl_lodz_p_edu_RoutingRegistryDef$$anonfun$1() {
 }
 $h_Lpl_lodz_p_edu_RoutingRegistryDef$$anonfun$1.prototype = $c_Lpl_lodz_p_edu_RoutingRegistryDef$$anonfun$1.prototype;
 $c_Lpl_lodz_p_edu_RoutingRegistryDef$$anonfun$1.prototype.isDefinedAt__T__Z = (function(x1) {
-  if ((x1 === "")) {
-    return true
-  };
-  if ((x1 === "/binding")) {
-    return true
-  };
-  if ((x1 === "/login")) {
-    return true
-  };
-  var o17 = $m_Lio_udash_package$().$$div$colon$div$1.unapply__T__s_Option(x1);
-  if ((!o17.isEmpty__Z())) {
-    var p3 = $as_T($as_T2(o17.get__O()).$$und1$f);
-    if ((p3 === "/binding")) {
-      return true
-    }
-  };
-  if ((x1 === "/rpc")) {
-    return true
-  };
-  if ((x1 === "/scalacss")) {
-    return true
-  };
-  return false
+  return ((x1 === "") || ((x1 === "/login") || (x1 === "/rpc")))
 });
 $c_Lpl_lodz_p_edu_RoutingRegistryDef$$anonfun$1.prototype.init___Lpl_lodz_p_edu_RoutingRegistryDef = (function($$outer) {
   return this
 });
 $c_Lpl_lodz_p_edu_RoutingRegistryDef$$anonfun$1.prototype.applyOrElse__T__F1__O = (function(x1, $default) {
-  if ((x1 === "")) {
-    return $m_Lpl_lodz_p_edu_IndexState$()
-  };
-  if ((x1 === "/binding")) {
-    return new $c_Lpl_lodz_p_edu_BindingDemoState().init___T("")
-  };
-  if ((x1 === "/login")) {
-    return new $c_Lpl_lodz_p_edu_LoginState().init___T__T("", "")
-  };
-  var o17 = $m_Lio_udash_package$().$$div$colon$div$1.unapply__T__s_Option(x1);
-  if ((!o17.isEmpty__Z())) {
-    var p3 = $as_T($as_T2(o17.get__O()).$$und1$f);
-    var arg = $as_T($as_T2(o17.get__O()).$$und2$f);
-    if ((p3 === "/binding")) {
-      return new $c_Lpl_lodz_p_edu_BindingDemoState().init___T(arg)
-    }
-  };
-  if ((x1 === "/rpc")) {
-    return $m_Lpl_lodz_p_edu_RPCDemoState$()
-  };
-  if ((x1 === "/scalacss")) {
-    return $m_Lpl_lodz_p_edu_DemoStylesState$()
-  };
-  return $default.apply__O__O(x1)
+  return ((x1 === "") ? $m_Lpl_lodz_p_edu_IndexState$() : ((x1 === "/login") ? $m_Lpl_lodz_p_edu_LoginState$() : ((x1 === "/rpc") ? $m_Lpl_lodz_p_edu_RPCDemoState$() : $default.apply__O__O(x1))))
 });
 $c_Lpl_lodz_p_edu_RoutingRegistryDef$$anonfun$1.prototype.isDefinedAt__O__Z = (function(x) {
   return this.isDefinedAt__T__Z($as_T(x))
@@ -49093,40 +48718,18 @@ function $h_Lpl_lodz_p_edu_RoutingRegistryDef$$anonfun$2() {
 }
 $h_Lpl_lodz_p_edu_RoutingRegistryDef$$anonfun$2.prototype = $c_Lpl_lodz_p_edu_RoutingRegistryDef$$anonfun$2.prototype;
 $c_Lpl_lodz_p_edu_RoutingRegistryDef$$anonfun$2.prototype.isDefinedAt__Lpl_lodz_p_edu_RoutingState__Z = (function(x2) {
-  var rc15 = false;
-  var x2$2 = null;
   var x = $m_Lpl_lodz_p_edu_IndexState$();
   if ((x === x2)) {
     return true
-  };
-  if ($is_Lpl_lodz_p_edu_BindingDemoState(x2)) {
-    rc15 = true;
-    x2$2 = $as_Lpl_lodz_p_edu_BindingDemoState(x2);
-    var p3 = x2$2.urlArg$2;
-    if ((p3 === "")) {
+  } else {
+    var x$3 = $m_Lpl_lodz_p_edu_LoginState$();
+    if ((x$3 === x2)) {
       return true
+    } else {
+      var x$5 = $m_Lpl_lodz_p_edu_RPCDemoState$();
+      return (x$5 === x2)
     }
-  };
-  if ($is_Lpl_lodz_p_edu_LoginState(x2)) {
-    var x4 = $as_Lpl_lodz_p_edu_LoginState(x2);
-    var p5 = x4.login$2;
-    var p6 = x4.password$2;
-    if (((p5 === "") && (p6 === ""))) {
-      return true
-    }
-  };
-  if (rc15) {
-    return true
-  };
-  var x$3 = $m_Lpl_lodz_p_edu_RPCDemoState$();
-  if ((x$3 === x2)) {
-    return true
-  };
-  var x$5 = $m_Lpl_lodz_p_edu_DemoStylesState$();
-  if ((x$5 === x2)) {
-    return true
-  };
-  return false
+  }
 });
 $c_Lpl_lodz_p_edu_RoutingRegistryDef$$anonfun$2.prototype.init___Lpl_lodz_p_edu_RoutingRegistryDef = (function($$outer) {
   return this
@@ -49138,41 +48741,22 @@ $c_Lpl_lodz_p_edu_RoutingRegistryDef$$anonfun$2.prototype.applyOrElse__O__F1__O 
   return this.applyOrElse__Lpl_lodz_p_edu_RoutingState__F1__O($as_Lpl_lodz_p_edu_RoutingState(x), $default)
 });
 $c_Lpl_lodz_p_edu_RoutingRegistryDef$$anonfun$2.prototype.applyOrElse__Lpl_lodz_p_edu_RoutingState__F1__O = (function(x2, $default) {
-  var rc15 = false;
-  var x2$2 = null;
   var x = $m_Lpl_lodz_p_edu_IndexState$();
   if ((x === x2)) {
     return ""
-  };
-  if ($is_Lpl_lodz_p_edu_BindingDemoState(x2)) {
-    rc15 = true;
-    x2$2 = $as_Lpl_lodz_p_edu_BindingDemoState(x2);
-    var p3 = x2$2.urlArg$2;
-    if ((p3 === "")) {
-      return "/binding"
-    }
-  };
-  if ($is_Lpl_lodz_p_edu_LoginState(x2)) {
-    var x4 = $as_Lpl_lodz_p_edu_LoginState(x2);
-    var p5 = x4.login$2;
-    var p6 = x4.password$2;
-    if (((p5 === "") && (p6 === ""))) {
+  } else {
+    var x$3 = $m_Lpl_lodz_p_edu_LoginState$();
+    if ((x$3 === x2)) {
       return "/login"
+    } else {
+      var x$5 = $m_Lpl_lodz_p_edu_RPCDemoState$();
+      if ((x$5 === x2)) {
+        return "/rpc"
+      } else {
+        return $default.apply__O__O(x2)
+      }
     }
-  };
-  if (rc15) {
-    var arg = x2$2.urlArg$2;
-    return $m_Lio_udash_package$().$$div$colon$div$1.apply__T__T__T("/binding", arg)
-  };
-  var x$3 = $m_Lpl_lodz_p_edu_RPCDemoState$();
-  if ((x$3 === x2)) {
-    return "/rpc"
-  };
-  var x$5 = $m_Lpl_lodz_p_edu_DemoStylesState$();
-  if ((x$5 === x2)) {
-    return "/scalacss"
-  };
-  return $default.apply__O__O(x2)
+  }
 });
 var $d_Lpl_lodz_p_edu_RoutingRegistryDef$$anonfun$2 = new $TypeData().initClass({
   Lpl_lodz_p_edu_RoutingRegistryDef$$anonfun$2: 0
@@ -54244,138 +53828,6 @@ var $d_Lio_udash_rpc_UdashRPCFramework$RPCFailure = new $TypeData().initClass({
 });
 $c_Lio_udash_rpc_UdashRPCFramework$RPCFailure.prototype.$classData = $d_Lio_udash_rpc_UdashRPCFramework$RPCFailure;
 /** @constructor */
-function $c_Lpl_lodz_p_edu_BindingDemoState() {
-  $c_Lpl_lodz_p_edu_RoutingState.call(this);
-  this.urlArg$2 = null
-}
-$c_Lpl_lodz_p_edu_BindingDemoState.prototype = new $h_Lpl_lodz_p_edu_RoutingState();
-$c_Lpl_lodz_p_edu_BindingDemoState.prototype.constructor = $c_Lpl_lodz_p_edu_BindingDemoState;
-/** @constructor */
-function $h_Lpl_lodz_p_edu_BindingDemoState() {
-  /*<skip>*/
-}
-$h_Lpl_lodz_p_edu_BindingDemoState.prototype = $c_Lpl_lodz_p_edu_BindingDemoState.prototype;
-$c_Lpl_lodz_p_edu_BindingDemoState.prototype.productPrefix__T = (function() {
-  return "BindingDemoState"
-});
-$c_Lpl_lodz_p_edu_BindingDemoState.prototype.productArity__I = (function() {
-  return 1
-});
-$c_Lpl_lodz_p_edu_BindingDemoState.prototype.equals__O__Z = (function(x$1) {
-  if ((this === x$1)) {
-    return true
-  } else if ($is_Lpl_lodz_p_edu_BindingDemoState(x$1)) {
-    var BindingDemoState$1 = $as_Lpl_lodz_p_edu_BindingDemoState(x$1);
-    return (this.urlArg$2 === BindingDemoState$1.urlArg$2)
-  } else {
-    return false
-  }
-});
-$c_Lpl_lodz_p_edu_BindingDemoState.prototype.productElement__I__O = (function(x$1) {
-  switch (x$1) {
-    case 0: {
-      return this.urlArg$2;
-      break
-    }
-    default: {
-      throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
-    }
-  }
-});
-$c_Lpl_lodz_p_edu_BindingDemoState.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
-});
-$c_Lpl_lodz_p_edu_BindingDemoState.prototype.init___T = (function(urlArg) {
-  this.urlArg$2 = urlArg;
-  $c_Lpl_lodz_p_edu_RoutingState.prototype.init___Lpl_lodz_p_edu_RoutingState.call(this, $m_Lpl_lodz_p_edu_RootState$());
-  return this
-});
-$c_Lpl_lodz_p_edu_BindingDemoState.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__I(this, (-889275714))
-});
-$c_Lpl_lodz_p_edu_BindingDemoState.prototype.productIterator__sc_Iterator = (function() {
-  return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
-});
-function $is_Lpl_lodz_p_edu_BindingDemoState(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lpl_lodz_p_edu_BindingDemoState)))
-}
-function $as_Lpl_lodz_p_edu_BindingDemoState(obj) {
-  return (($is_Lpl_lodz_p_edu_BindingDemoState(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "pl.lodz.p.edu.BindingDemoState"))
-}
-function $isArrayOf_Lpl_lodz_p_edu_BindingDemoState(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lpl_lodz_p_edu_BindingDemoState)))
-}
-function $asArrayOf_Lpl_lodz_p_edu_BindingDemoState(obj, depth) {
-  return (($isArrayOf_Lpl_lodz_p_edu_BindingDemoState(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lpl.lodz.p.edu.BindingDemoState;", depth))
-}
-var $d_Lpl_lodz_p_edu_BindingDemoState = new $TypeData().initClass({
-  Lpl_lodz_p_edu_BindingDemoState: 0
-}, false, "pl.lodz.p.edu.BindingDemoState", {
-  Lpl_lodz_p_edu_BindingDemoState: 1,
-  Lpl_lodz_p_edu_RoutingState: 1,
-  O: 1,
-  Lio_udash_core_State: 1,
-  s_Product: 1,
-  s_Equals: 1,
-  s_Serializable: 1,
-  Ljava_io_Serializable: 1
-});
-$c_Lpl_lodz_p_edu_BindingDemoState.prototype.$classData = $d_Lpl_lodz_p_edu_BindingDemoState;
-/** @constructor */
-function $c_Lpl_lodz_p_edu_DemoStylesState$() {
-  $c_Lpl_lodz_p_edu_RoutingState.call(this)
-}
-$c_Lpl_lodz_p_edu_DemoStylesState$.prototype = new $h_Lpl_lodz_p_edu_RoutingState();
-$c_Lpl_lodz_p_edu_DemoStylesState$.prototype.constructor = $c_Lpl_lodz_p_edu_DemoStylesState$;
-/** @constructor */
-function $h_Lpl_lodz_p_edu_DemoStylesState$() {
-  /*<skip>*/
-}
-$h_Lpl_lodz_p_edu_DemoStylesState$.prototype = $c_Lpl_lodz_p_edu_DemoStylesState$.prototype;
-$c_Lpl_lodz_p_edu_DemoStylesState$.prototype.init___ = (function() {
-  $c_Lpl_lodz_p_edu_RoutingState.prototype.init___Lpl_lodz_p_edu_RoutingState.call(this, $m_Lpl_lodz_p_edu_RootState$());
-  return this
-});
-$c_Lpl_lodz_p_edu_DemoStylesState$.prototype.productPrefix__T = (function() {
-  return "DemoStylesState"
-});
-$c_Lpl_lodz_p_edu_DemoStylesState$.prototype.productArity__I = (function() {
-  return 0
-});
-$c_Lpl_lodz_p_edu_DemoStylesState$.prototype.productElement__I__O = (function(x$1) {
-  throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
-});
-$c_Lpl_lodz_p_edu_DemoStylesState$.prototype.toString__T = (function() {
-  return "DemoStylesState"
-});
-$c_Lpl_lodz_p_edu_DemoStylesState$.prototype.hashCode__I = (function() {
-  return 1698193100
-});
-$c_Lpl_lodz_p_edu_DemoStylesState$.prototype.productIterator__sc_Iterator = (function() {
-  return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
-});
-var $d_Lpl_lodz_p_edu_DemoStylesState$ = new $TypeData().initClass({
-  Lpl_lodz_p_edu_DemoStylesState$: 0
-}, false, "pl.lodz.p.edu.DemoStylesState$", {
-  Lpl_lodz_p_edu_DemoStylesState$: 1,
-  Lpl_lodz_p_edu_RoutingState: 1,
-  O: 1,
-  Lio_udash_core_State: 1,
-  s_Product: 1,
-  s_Equals: 1,
-  s_Serializable: 1,
-  Ljava_io_Serializable: 1
-});
-$c_Lpl_lodz_p_edu_DemoStylesState$.prototype.$classData = $d_Lpl_lodz_p_edu_DemoStylesState$;
-var $n_Lpl_lodz_p_edu_DemoStylesState$ = (void 0);
-function $m_Lpl_lodz_p_edu_DemoStylesState$() {
-  if ((!$n_Lpl_lodz_p_edu_DemoStylesState$)) {
-    $n_Lpl_lodz_p_edu_DemoStylesState$ = new $c_Lpl_lodz_p_edu_DemoStylesState$().init___()
-  };
-  return $n_Lpl_lodz_p_edu_DemoStylesState$
-}
-/** @constructor */
 function $c_Lpl_lodz_p_edu_ErrorState$() {
   $c_Lpl_lodz_p_edu_RoutingState.call(this)
 }
@@ -54482,81 +53934,42 @@ function $m_Lpl_lodz_p_edu_IndexState$() {
   return $n_Lpl_lodz_p_edu_IndexState$
 }
 /** @constructor */
-function $c_Lpl_lodz_p_edu_LoginState() {
-  $c_Lpl_lodz_p_edu_RoutingState.call(this);
-  this.login$2 = null;
-  this.password$2 = null
+function $c_Lpl_lodz_p_edu_LoginState$() {
+  $c_Lpl_lodz_p_edu_RoutingState.call(this)
 }
-$c_Lpl_lodz_p_edu_LoginState.prototype = new $h_Lpl_lodz_p_edu_RoutingState();
-$c_Lpl_lodz_p_edu_LoginState.prototype.constructor = $c_Lpl_lodz_p_edu_LoginState;
+$c_Lpl_lodz_p_edu_LoginState$.prototype = new $h_Lpl_lodz_p_edu_RoutingState();
+$c_Lpl_lodz_p_edu_LoginState$.prototype.constructor = $c_Lpl_lodz_p_edu_LoginState$;
 /** @constructor */
-function $h_Lpl_lodz_p_edu_LoginState() {
+function $h_Lpl_lodz_p_edu_LoginState$() {
   /*<skip>*/
 }
-$h_Lpl_lodz_p_edu_LoginState.prototype = $c_Lpl_lodz_p_edu_LoginState.prototype;
-$c_Lpl_lodz_p_edu_LoginState.prototype.init___T__T = (function(login, password) {
-  this.login$2 = login;
-  this.password$2 = password;
+$h_Lpl_lodz_p_edu_LoginState$.prototype = $c_Lpl_lodz_p_edu_LoginState$.prototype;
+$c_Lpl_lodz_p_edu_LoginState$.prototype.init___ = (function() {
   $c_Lpl_lodz_p_edu_RoutingState.prototype.init___Lpl_lodz_p_edu_RoutingState.call(this, $m_Lpl_lodz_p_edu_RootState$());
   return this
 });
-$c_Lpl_lodz_p_edu_LoginState.prototype.productPrefix__T = (function() {
+$c_Lpl_lodz_p_edu_LoginState$.prototype.productPrefix__T = (function() {
   return "LoginState"
 });
-$c_Lpl_lodz_p_edu_LoginState.prototype.productArity__I = (function() {
-  return 2
+$c_Lpl_lodz_p_edu_LoginState$.prototype.productArity__I = (function() {
+  return 0
 });
-$c_Lpl_lodz_p_edu_LoginState.prototype.equals__O__Z = (function(x$1) {
-  if ((this === x$1)) {
-    return true
-  } else if ($is_Lpl_lodz_p_edu_LoginState(x$1)) {
-    var LoginState$1 = $as_Lpl_lodz_p_edu_LoginState(x$1);
-    return ((this.login$2 === LoginState$1.login$2) && (this.password$2 === LoginState$1.password$2))
-  } else {
-    return false
-  }
+$c_Lpl_lodz_p_edu_LoginState$.prototype.productElement__I__O = (function(x$1) {
+  throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
 });
-$c_Lpl_lodz_p_edu_LoginState.prototype.productElement__I__O = (function(x$1) {
-  switch (x$1) {
-    case 0: {
-      return this.login$2;
-      break
-    }
-    case 1: {
-      return this.password$2;
-      break
-    }
-    default: {
-      throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
-    }
-  }
+$c_Lpl_lodz_p_edu_LoginState$.prototype.toString__T = (function() {
+  return "LoginState"
 });
-$c_Lpl_lodz_p_edu_LoginState.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
+$c_Lpl_lodz_p_edu_LoginState$.prototype.hashCode__I = (function() {
+  return 234748616
 });
-$c_Lpl_lodz_p_edu_LoginState.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__I(this, (-889275714))
-});
-$c_Lpl_lodz_p_edu_LoginState.prototype.productIterator__sc_Iterator = (function() {
+$c_Lpl_lodz_p_edu_LoginState$.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-function $is_Lpl_lodz_p_edu_LoginState(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lpl_lodz_p_edu_LoginState)))
-}
-function $as_Lpl_lodz_p_edu_LoginState(obj) {
-  return (($is_Lpl_lodz_p_edu_LoginState(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "pl.lodz.p.edu.LoginState"))
-}
-function $isArrayOf_Lpl_lodz_p_edu_LoginState(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lpl_lodz_p_edu_LoginState)))
-}
-function $asArrayOf_Lpl_lodz_p_edu_LoginState(obj, depth) {
-  return (($isArrayOf_Lpl_lodz_p_edu_LoginState(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lpl.lodz.p.edu.LoginState;", depth))
-}
-var $d_Lpl_lodz_p_edu_LoginState = new $TypeData().initClass({
-  Lpl_lodz_p_edu_LoginState: 0
-}, false, "pl.lodz.p.edu.LoginState", {
-  Lpl_lodz_p_edu_LoginState: 1,
+var $d_Lpl_lodz_p_edu_LoginState$ = new $TypeData().initClass({
+  Lpl_lodz_p_edu_LoginState$: 0
+}, false, "pl.lodz.p.edu.LoginState$", {
+  Lpl_lodz_p_edu_LoginState$: 1,
   Lpl_lodz_p_edu_RoutingState: 1,
   O: 1,
   Lio_udash_core_State: 1,
@@ -54565,7 +53978,14 @@ var $d_Lpl_lodz_p_edu_LoginState = new $TypeData().initClass({
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lpl_lodz_p_edu_LoginState.prototype.$classData = $d_Lpl_lodz_p_edu_LoginState;
+$c_Lpl_lodz_p_edu_LoginState$.prototype.$classData = $d_Lpl_lodz_p_edu_LoginState$;
+var $n_Lpl_lodz_p_edu_LoginState$ = (void 0);
+function $m_Lpl_lodz_p_edu_LoginState$() {
+  if ((!$n_Lpl_lodz_p_edu_LoginState$)) {
+    $n_Lpl_lodz_p_edu_LoginState$ = new $c_Lpl_lodz_p_edu_LoginState$().init___()
+  };
+  return $n_Lpl_lodz_p_edu_LoginState$
+}
 /** @constructor */
 function $c_Lpl_lodz_p_edu_RPCDemoState$() {
   $c_Lpl_lodz_p_edu_RoutingState.call(this)
@@ -54673,148 +54093,52 @@ function $m_Lpl_lodz_p_edu_RootState$() {
   return $n_Lpl_lodz_p_edu_RootState$
 }
 /** @constructor */
-function $c_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$() {
+function $c_Lpl_lodz_p_edu_views_LoginViewPresenter$() {
   $c_Lio_udash_core_DefaultViewPresenterFactory.call(this)
 }
-$c_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$.prototype = new $h_Lio_udash_core_DefaultViewPresenterFactory();
-$c_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$.prototype.constructor = $c_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$;
+$c_Lpl_lodz_p_edu_views_LoginViewPresenter$.prototype = new $h_Lio_udash_core_DefaultViewPresenterFactory();
+$c_Lpl_lodz_p_edu_views_LoginViewPresenter$.prototype.constructor = $c_Lpl_lodz_p_edu_views_LoginViewPresenter$;
 /** @constructor */
-function $h_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$() {
+function $h_Lpl_lodz_p_edu_views_LoginViewPresenter$() {
   /*<skip>*/
 }
-$h_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$.prototype = $c_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$.prototype;
-$c_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$.prototype.init___ = (function() {
+$h_Lpl_lodz_p_edu_views_LoginViewPresenter$.prototype = $c_Lpl_lodz_p_edu_views_LoginViewPresenter$.prototype;
+$c_Lpl_lodz_p_edu_views_LoginViewPresenter$.prototype.init___ = (function() {
   $c_Lio_udash_core_DefaultViewPresenterFactory.prototype.init___F0.call(this, new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function() {
-    return new $c_Lpl_lodz_p_edu_views_DemoStylesView().init___()
+    $m_Lio_udash_package$();
+    var evidence$1 = $m_Lio_udash_properties_PropertyCreator$().propertyCreatorString$1;
+    var ec = $m_Lpl_lodz_p_edu_Context$().executionContext$1;
+    var login = evidence$1.newProperty__Lio_udash_properties_single_ReadableProperty__s_concurrent_ExecutionContext__Lio_udash_properties_single_CastableProperty(null, ec);
+    $m_Lio_udash_package$();
+    var evidence$1$1 = $m_Lio_udash_properties_PropertyCreator$().propertyCreatorString$1;
+    var ec$1 = $m_Lpl_lodz_p_edu_Context$().executionContext$1;
+    var password = evidence$1$1.newProperty__Lio_udash_properties_single_ReadableProperty__s_concurrent_ExecutionContext__Lio_udash_properties_single_CastableProperty(null, ec$1);
+    return new $c_Lpl_lodz_p_edu_views_LoginView().init___Lio_udash_properties_single_Property__Lio_udash_properties_single_Property(login, password)
   })));
   return this
 });
-$c_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$.prototype.productPrefix__T = (function() {
-  return "DemoStylesViewPresenter"
-});
-$c_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$.prototype.productArity__I = (function() {
-  return 0
-});
-$c_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$.prototype.productElement__I__O = (function(x$1) {
-  throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
-});
-$c_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$.prototype.toString__T = (function() {
-  return "DemoStylesViewPresenter"
-});
-$c_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$.prototype.hashCode__I = (function() {
-  return 1566015678
-});
-$c_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$.prototype.productIterator__sc_Iterator = (function() {
-  return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
-});
-var $d_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$ = new $TypeData().initClass({
-  Lpl_lodz_p_edu_views_DemoStylesViewPresenter$: 0
-}, false, "pl.lodz.p.edu.views.DemoStylesViewPresenter$", {
-  Lpl_lodz_p_edu_views_DemoStylesViewPresenter$: 1,
-  Lio_udash_core_DefaultViewPresenterFactory: 1,
-  O: 1,
-  Lio_udash_core_ViewPresenter: 1,
-  s_Product: 1,
-  s_Equals: 1,
-  s_Serializable: 1,
-  Ljava_io_Serializable: 1
-});
-$c_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$.prototype.$classData = $d_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$;
-var $n_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$ = (void 0);
-function $m_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$() {
-  if ((!$n_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$)) {
-    $n_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$ = new $c_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$().init___()
-  };
-  return $n_Lpl_lodz_p_edu_views_DemoStylesViewPresenter$
-}
-/** @constructor */
-function $c_Lpl_lodz_p_edu_views_LoginViewPresenter() {
-  $c_Lio_udash_core_DefaultViewPresenterFactory.call(this);
-  this.loginStr$2 = null;
-  this.passwordStr$2 = null
-}
-$c_Lpl_lodz_p_edu_views_LoginViewPresenter.prototype = new $h_Lio_udash_core_DefaultViewPresenterFactory();
-$c_Lpl_lodz_p_edu_views_LoginViewPresenter.prototype.constructor = $c_Lpl_lodz_p_edu_views_LoginViewPresenter;
-/** @constructor */
-function $h_Lpl_lodz_p_edu_views_LoginViewPresenter() {
-  /*<skip>*/
-}
-$h_Lpl_lodz_p_edu_views_LoginViewPresenter.prototype = $c_Lpl_lodz_p_edu_views_LoginViewPresenter.prototype;
-$c_Lpl_lodz_p_edu_views_LoginViewPresenter.prototype.init___T__T = (function(loginStr, passwordStr) {
-  this.loginStr$2 = loginStr;
-  this.passwordStr$2 = passwordStr;
-  $c_Lio_udash_core_DefaultViewPresenterFactory.prototype.init___F0.call(this, new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(loginStr$1, passwordStr$1) {
-    return (function() {
-      $m_Lio_udash_package$();
-      var pc = $m_Lio_udash_properties_PropertyCreator$().propertyCreatorString$1;
-      var ec = $m_Lpl_lodz_p_edu_Context$().executionContext$1;
-      var login = $f_Lio_udash_properties_PropertyCreator__newProperty__O__Lio_udash_properties_single_ReadableProperty__s_concurrent_ExecutionContext__Lio_udash_properties_single_CastableProperty(pc, loginStr$1, null, ec);
-      $m_Lio_udash_package$();
-      var pc$1 = $m_Lio_udash_properties_PropertyCreator$().propertyCreatorString$1;
-      var ec$1 = $m_Lpl_lodz_p_edu_Context$().executionContext$1;
-      var password = $f_Lio_udash_properties_PropertyCreator__newProperty__O__Lio_udash_properties_single_ReadableProperty__s_concurrent_ExecutionContext__Lio_udash_properties_single_CastableProperty(pc$1, passwordStr$1, null, ec$1);
-      return new $c_Lpl_lodz_p_edu_views_LoginView().init___Lio_udash_properties_single_Property__Lio_udash_properties_single_Property(login, password)
-    })
-  })(loginStr, passwordStr)));
-  return this
-});
-$c_Lpl_lodz_p_edu_views_LoginViewPresenter.prototype.productPrefix__T = (function() {
+$c_Lpl_lodz_p_edu_views_LoginViewPresenter$.prototype.productPrefix__T = (function() {
   return "LoginViewPresenter"
 });
-$c_Lpl_lodz_p_edu_views_LoginViewPresenter.prototype.productArity__I = (function() {
-  return 2
+$c_Lpl_lodz_p_edu_views_LoginViewPresenter$.prototype.productArity__I = (function() {
+  return 0
 });
-$c_Lpl_lodz_p_edu_views_LoginViewPresenter.prototype.equals__O__Z = (function(x$1) {
-  if ((this === x$1)) {
-    return true
-  } else if ($is_Lpl_lodz_p_edu_views_LoginViewPresenter(x$1)) {
-    var LoginViewPresenter$1 = $as_Lpl_lodz_p_edu_views_LoginViewPresenter(x$1);
-    return ((this.loginStr$2 === LoginViewPresenter$1.loginStr$2) && (this.passwordStr$2 === LoginViewPresenter$1.passwordStr$2))
-  } else {
-    return false
-  }
+$c_Lpl_lodz_p_edu_views_LoginViewPresenter$.prototype.productElement__I__O = (function(x$1) {
+  throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
 });
-$c_Lpl_lodz_p_edu_views_LoginViewPresenter.prototype.productElement__I__O = (function(x$1) {
-  switch (x$1) {
-    case 0: {
-      return this.loginStr$2;
-      break
-    }
-    case 1: {
-      return this.passwordStr$2;
-      break
-    }
-    default: {
-      throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
-    }
-  }
+$c_Lpl_lodz_p_edu_views_LoginViewPresenter$.prototype.toString__T = (function() {
+  return "LoginViewPresenter"
 });
-$c_Lpl_lodz_p_edu_views_LoginViewPresenter.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
+$c_Lpl_lodz_p_edu_views_LoginViewPresenter$.prototype.hashCode__I = (function() {
+  return (-743481158)
 });
-$c_Lpl_lodz_p_edu_views_LoginViewPresenter.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__I(this, (-889275714))
-});
-$c_Lpl_lodz_p_edu_views_LoginViewPresenter.prototype.productIterator__sc_Iterator = (function() {
+$c_Lpl_lodz_p_edu_views_LoginViewPresenter$.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-function $is_Lpl_lodz_p_edu_views_LoginViewPresenter(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lpl_lodz_p_edu_views_LoginViewPresenter)))
-}
-function $as_Lpl_lodz_p_edu_views_LoginViewPresenter(obj) {
-  return (($is_Lpl_lodz_p_edu_views_LoginViewPresenter(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "pl.lodz.p.edu.views.LoginViewPresenter"))
-}
-function $isArrayOf_Lpl_lodz_p_edu_views_LoginViewPresenter(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lpl_lodz_p_edu_views_LoginViewPresenter)))
-}
-function $asArrayOf_Lpl_lodz_p_edu_views_LoginViewPresenter(obj, depth) {
-  return (($isArrayOf_Lpl_lodz_p_edu_views_LoginViewPresenter(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lpl.lodz.p.edu.views.LoginViewPresenter;", depth))
-}
-var $d_Lpl_lodz_p_edu_views_LoginViewPresenter = new $TypeData().initClass({
-  Lpl_lodz_p_edu_views_LoginViewPresenter: 0
-}, false, "pl.lodz.p.edu.views.LoginViewPresenter", {
-  Lpl_lodz_p_edu_views_LoginViewPresenter: 1,
+var $d_Lpl_lodz_p_edu_views_LoginViewPresenter$ = new $TypeData().initClass({
+  Lpl_lodz_p_edu_views_LoginViewPresenter$: 0
+}, false, "pl.lodz.p.edu.views.LoginViewPresenter$", {
+  Lpl_lodz_p_edu_views_LoginViewPresenter$: 1,
   Lio_udash_core_DefaultViewPresenterFactory: 1,
   O: 1,
   Lio_udash_core_ViewPresenter: 1,
@@ -54823,7 +54147,14 @@ var $d_Lpl_lodz_p_edu_views_LoginViewPresenter = new $TypeData().initClass({
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lpl_lodz_p_edu_views_LoginViewPresenter.prototype.$classData = $d_Lpl_lodz_p_edu_views_LoginViewPresenter;
+$c_Lpl_lodz_p_edu_views_LoginViewPresenter$.prototype.$classData = $d_Lpl_lodz_p_edu_views_LoginViewPresenter$;
+var $n_Lpl_lodz_p_edu_views_LoginViewPresenter$ = (void 0);
+function $m_Lpl_lodz_p_edu_views_LoginViewPresenter$() {
+  if ((!$n_Lpl_lodz_p_edu_views_LoginViewPresenter$)) {
+    $n_Lpl_lodz_p_edu_views_LoginViewPresenter$ = new $c_Lpl_lodz_p_edu_views_LoginViewPresenter$().init___()
+  };
+  return $n_Lpl_lodz_p_edu_views_LoginViewPresenter$
+}
 /** @constructor */
 function $c_Lpl_lodz_p_edu_views_RPCDemoViewPresenter$() {
   $c_Lio_udash_core_DefaultViewPresenterFactory.call(this)
