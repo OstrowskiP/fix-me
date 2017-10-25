@@ -8,6 +8,7 @@ import scala.concurrent.Future
 trait MainServerRPC {
   def hello(name: String): Future[String]
   def pushMe(): Unit
+  def login(login: String, password: String): Future[String]
 }
 
        
