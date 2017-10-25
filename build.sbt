@@ -5,7 +5,7 @@ import Dependencies._
 name := "fix-me"
 
 version in ThisBuild := "0.1.0-SNAPSHOT"
-scalaVersion in ThisBuild := "2.12.2"
+scalaVersion in ThisBuild := "2.11.8"
 organization in ThisBuild := "pl.lodz.p.edu"
 crossPaths in ThisBuild := false
 scalacOptions in ThisBuild ++= Seq(
@@ -16,8 +16,8 @@ scalacOptions in ThisBuild ++= Seq(
   "-language:existentials",
   "-language:dynamics",
   "-Xfuture",
-  "-Xfatal-warnings",
-  "-Xlint:-unused,_"
+  "-Xfatal-warnings"
+//  "-Xlint:-unused,_"
 )
 
 def crossLibs(configuration: Configuration) =

@@ -17,7 +17,7 @@ class IndexView extends View {
       "To co wyróżnia nas od konkurencji to możliwość zamówienia serwisu z naprawą na miejscu " +
       "lub z odbiorem sprzętu przez naszego pracownika (jeśli naprawa wymaga specjalistycznego sprzętu i naszego laboratorium)." +
       "Wystarczy, że wypełnisz zgłoszenie serwisowe, nasz praacownik odezwie się do Ciebie i umówi w dogodnej dla Ciebie dacie." +
-      "Zachęcamy do założenia swojego konta, będziesz mógł na bieżąco śledzić status swoich zgłoszeń oraz przejrzeć ich historię."),
+      "Zachęcamy do założenia swojego konta, będziesz mógł na bieżąco śledzić status swoich zgłoszeń oraz przejrzeć ich historię.")
   )
 
   override def getTemplate: Modifier = content

@@ -1,12 +1,12 @@
 package pl.lodz.p.edu.views
 
 import io.udash._
+import io.udash.core.DefaultViewPresenterFactory
 import pl.lodz.p.edu.RPCDemoState
-import org.scalajs.dom.Element
 import pl.lodz.p.edu.styles.DemoStyles
-import scalacss.ScalatagsCss._
 
-import scala.util.{Success, Failure}
+import scala.util.{Failure, Success}
+import scalacss.ScalatagsCss._
 
 case object RPCDemoViewPresenter extends DefaultViewPresenterFactory[RPCDemoState.type](() => {
   import pl.lodz.p.edu.Context._
